@@ -89,3 +89,19 @@ collections:
                   - { label: "Pregunta", name: "q", widget: "string" }
                   - { label: "Respuesta (dejar vacío solo si usas la lista de abajo)", name: "a", widget: "text", required: false }
                   - { label: "Respuesta en lista (solo para '¿Qué servicios ofrecen?')", name: "list", widget: "list", field: { label: "Elemento", name: "item", widget: "string" }, required: false }
+
+  - name: "foro"
+    label: "Foro"
+    files:
+      - name: "foro"
+        label: "Temas más comentados"
+        file: "content/foro.json"
+        fields:
+          - label: "Temas destacados"
+            name: "trending"
+            widget: "list"
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "Categoría (etiqueta)", name: "tag", widget: "string" }
+              - { label: "Pregunta", name: "q", widget: "string" }
+              - { label: "Respuesta", name: "a", widget: "text" }

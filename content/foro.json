@@ -1,0 +1,34 @@
+{
+  "trending": [
+    {
+      "tag": "Antes de la operación",
+      "q": "¿Necesito contratar seguro de carga? ¿No responde la naviera?",
+      "a": "Sí, sugerimos contratarlo. Las navieras tienen esquemas de responsabilidad muy limitados, y ante cualquier evento, el seguro cubre el valor real de tu inversión."
+    },
+    {
+      "tag": "Durante la operación",
+      "q": "¿Por qué me cobran almacenajes y demoras si el retraso no fue mi culpa?",
+      "a": "Las terminales y navieras aplican las tarifas cuando la mercancía pasa más días de lo permitido en el recinto, sin importar el motivo. Hacemos todo lo posible por evitarlos."
+    },
+    {
+      "tag": "Después de la operación",
+      "q": "¿Qué pasa si el SAT me revisa dentro de dos o tres años?",
+      "a": "Nada de qué preocuparse: tienes el expediente completo para respaldarte, y estaremos aquí para apoyarte con cualquier aclaración."
+    },
+    {
+      "tag": "Sobre los productos",
+      "q": "¿Por qué el pedimento no viene a mi nombre?",
+      "a": "Porque nosotros estamos dados de alta en el padrón de importadores, lo que nos permite hacer la importación a nuestro nombre y responsabilizarnos ante la autoridad durante todo el proceso."
+    },
+    {
+      "tag": "Sobre nuestros servicios",
+      "q": "¿Puedo importar aunque no tenga padrón de importadores?",
+      "a": "Sí, ofrecemos opciones para importar sin padrón o te ayudamos a activarlo si lo necesitas."
+    },
+    {
+      "tag": "Facturación y costos",
+      "q": "¿Puedo deducir mis facturas?",
+      "a": "Sí. Emitimos factura electrónica (CFDI) válida en México. Solo requerimos tus datos fiscales."
+    }
+  ]
+}

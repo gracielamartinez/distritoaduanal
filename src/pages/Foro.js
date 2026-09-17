@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link } from '../router.js';
 import { whatsappLink } from '../config.js';
 
-// Temas más comentados: una selección curada de FAQ_CATEGORIES para dar
-// contexto rápido. El foro no publica hilos en vivo (el sitio no tiene
-// backend) — cada pregunta enviada llega directo al equipo por WhatsApp.
+// Temas más comentados. Estos son los valores por defecto (respaldo si
+// content/foro.json no carga). Una vez editado desde /admin, el contenido
+// real vive en content/foro.json. El foro no publica hilos en vivo (el
+// sitio no tiene backend) — cada pregunta enviada llega directo al equipo
+// por WhatsApp.
 const TRENDING = [
   {
     tag: 'Antes de la operación',
@@ -37,6 +39,21 @@ const TRENDING = [
     a: 'Sí. Emitimos factura electrónica (CFDI) válida en México. Solo requerimos tus datos fiscales.',
   },
 ];
+
+// Reemplaza TRENDING con lo que venga de content/foro.json.
+export async function hydrateForo() {
+  try {
+    const res = await fetch('./content/foro.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (Array.isArray(data.trending) && data.trending.length) {
+      TRENDING.length = 0;
+      TRENDING.push(...data.trending);
+    }
+  } catch (e) {
+    // Sin conexión o sin content/foro.json todavía: se mantienen los temas por defecto.
+  }
+}
 
 function ThreadCard({ tag, q, a }) {
   return React.createElement('div', { className: 'forum-thread' },
