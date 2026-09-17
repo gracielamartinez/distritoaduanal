@@ -10,6 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
+  <script>
+    // Los enlaces de invitación/recuperación de Netlify Identity abren esta
+    // página con el token en la URL; sin esto se quedan aquí sin hacer nada.
+    // Los mandamos a /admin/, que sí carga el widget que los procesa.
+    if (window.location.hash && /invite_token|recovery_token|confirmation_token|email_change_token/.test(window.location.hash)) {
+      window.location.href = '/admin/' + window.location.hash;
+    }
+  </script>
   <script type="importmap">
     {
       "imports": {
