@@ -5,16 +5,14 @@
 export const SITE = {
   name: 'Distrito Aduanal',
   tagline: 'Siempre juntos, de origen a destino.',
-  city: 'Mérida, Yucatán',
-  customsOffice: 'Aduana de Progreso',
-  phoneDisplay: '999 604 7334',
+  phoneDisplay: '+52 999 604 7334',
   phoneHref: 'tel:+529996047334',
   whatsappNumber: '5219996047334', // formato internacional para wa.me (México requiere el "1" extra)
   email: 'soluciones@distritoaduanal.com',
   facebookUrl: 'https://www.facebook.com/share/1MLqFhxfGd/?mibextid=wwXIfr',
   instagramUrl: 'https://www.instagram.com/distritoaduanal?stkn=MmN0dGd5cnNmZHFs',
   stats: {
-    years: '',
+    clients: '',
     operations: '',
     customsOffices: '',
     sectors: '',
@@ -24,7 +22,6 @@ export const SITE = {
     quote: '',
     author: '',
   },
-  coveragePeninsulaOffice: '',
 };
 
 export const whatsappLink = (message) =>

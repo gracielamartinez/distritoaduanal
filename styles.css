@@ -106,6 +106,7 @@ input, textarea {
   letter-spacing: 0.01em;
 }
 .topbar-right { display: flex; gap: 24px; align-items: center; }
+.topbar-wrap-solo { justify-content: flex-end; }
 .topbar-sep { color: #3A403E; }
 
 .social-links { display: flex; align-items: center; gap: 14px; }

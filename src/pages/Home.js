@@ -9,7 +9,7 @@ import { whatsappLink, SITE } from '../config.js';
 const AUDIENCE_TEXT = 'Acompañamos a personas físicas, emprendedores, pequeñas y grandes empresas en cada paso de su camino. Sabemos lo importante que es que tus productos lleguen seguros y a tiempo. Nos encargamos de agilizar toda tu logística, sin importar el volumen o el origen de tus cargas. Te acompañamos en cada etapa con una asesoría a tu medida y un equipo experto dedicado a cuidar de tu negocio.';
 
 const SERVICES = [
-  { Icon: IconCustoms, title: 'Agencia aduanal', text: 'Despacho de importación y exportación, clasificación y liberación de tu mercancía.' },
+  { Icon: IconCustoms, title: 'Despacho aduanal', text: 'Despacho de importación y exportación, clasificación y liberación de tu mercancía.' },
   { Icon: IconTrade, title: 'Comercializadora', text: '¿No tienes padrón de importadores? Importamos por ti, con todo en regla.' },
   { Icon: IconLogistics, title: 'Logística y fletes', text: 'Envíos nacionales e internacionales, venta de guías y coordinación puerta a puerta.' },
   { Icon: IconAdvice, title: 'Asesoría', text: 'Te decimos qué necesitas antes de comprar: permisos, normas e impuestos.' },
@@ -17,15 +17,8 @@ const SERVICES = [
 
 // Se calculan al momento de renderizar (no al importar el módulo) para que
 // reflejen el contenido ya cargado desde content/site.json vía hydrateSite().
-const getCoverage = () => [
-  { k: 'Marítima', v: 'Progreso' },
-  { k: 'Aérea', v: 'Mérida' },
-  { k: 'Península', v: SITE.coveragePeninsulaOffice, placeholder: 'Aduana' },
-  { k: 'Resto del país', v: 'Coordinamos' },
-];
-
 const getStats = () => [
-  { value: SITE.stats.years, label: 'años acompañando importadores' },
+  { value: SITE.stats.clients, label: 'clientes atendidos' },
   { value: SITE.stats.operations, label: 'operaciones realizadas' },
   { value: SITE.stats.customsOffices, label: 'aduanas donde operamos' },
   { value: SITE.stats.sectors, label: 'sectores atendidos' },
@@ -107,7 +100,7 @@ export default function Home() {
     React.createElement('section', { className: 'hero' },
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', { className: 'hero-copy' },
-          React.createElement('div', { className: 'eyebrow' }, 'Agencia aduanal y comercializadora'),
+          React.createElement('div', { className: 'eyebrow' }, 'Comercializadora y logística de comercio exterior'),
           React.createElement('h1', null, 'Que las fronteras no detengan tu negocio'),
           React.createElement('p', null, 'Te acompañamos en cada paso de tu importación o exportación, desde el primer correo a tu proveedor hasta que la mercancía llega a tu bodega.'),
           React.createElement('div', { className: 'hero-actions' },
@@ -152,24 +145,6 @@ export default function Home() {
 
     // ===== ¿CÓMO ES TU OPERACIÓN? =====
     React.createElement('div', { id: 'operacion' }, React.createElement(OperationBlock, null)),
-
-    // ===== COBERTURA =====
-    React.createElement('section', { className: 'coverage', id: 'cobertura' },
-      React.createElement('div', { className: 'wrap-flex' },
-        React.createElement('div', { className: 'coverage-copy' },
-          React.createElement('div', { className: 'eyebrow' }, 'Cobertura'),
-          React.createElement('h2', null, 'Estamos donde tu mercancía llega'),
-          React.createElement('p', null, `Operamos desde ${SITE.city}, con presencia en el puerto de Progreso. Conocemos a la gente y los tiempos de cada punto — y eso se nota cuando algo hay que resolver rápido.`),
-          React.createElement('p', { className: 'faint' }, 'Si tu operación entra por otra aduana del país, también la coordinamos.'),
-        ),
-        React.createElement('div', { className: 'coverage-grid' },
-          getCoverage().map((c) => React.createElement('div', { className: 'coverage-cell', key: c.k },
-            React.createElement('div', { className: 'k' }, c.k),
-            React.createElement('div', { className: 'v' }, c.v || React.createElement('span', { className: 'fill-me' }, c.placeholder)),
-          )),
-        ),
-      ),
-    ),
 
     // ===== CIFRAS =====
     React.createElement('section', { className: 'stats-outer' },

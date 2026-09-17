@@ -19,8 +19,6 @@ collections:
         fields:
           - { label: "Nombre de la empresa", name: "name", widget: "string" }
           - { label: "Frase (tagline)", name: "tagline", widget: "string" }
-          - { label: "Ciudad", name: "city", widget: "string" }
-          - { label: "Aduana de referencia", name: "customsOffice", widget: "string" }
           - { label: "Teléfono (como se muestra)", name: "phoneDisplay", widget: "string" }
           - { label: "Teléfono (enlace tel:+52...)", name: "phoneHref", widget: "string" }
           - { label: "WhatsApp (formato 521 + 10 dígitos, sin espacios)", name: "whatsappNumber", widget: "string", pattern: ['^\d{10,13}$', "Solo números, sin espacios ni signos"] }
@@ -31,7 +29,7 @@ collections:
             name: "stats"
             widget: "object"
             fields:
-              - { label: "Años acompañando importadores", name: "years", widget: "string", required: false, hint: "Ej. 8" }
+              - { label: "Clientes atendidos", name: "clients", widget: "string", required: false, hint: "Ej. 50+" }
               - { label: "Operaciones realizadas", name: "operations", widget: "string", required: false, hint: "Ej. 500+" }
               - { label: "Aduanas donde operan", name: "customsOffices", widget: "string", required: false, hint: "Ej. 6" }
               - { label: "Sectores atendidos", name: "sectors", widget: "string", required: false, hint: "Ej. 12" }
@@ -42,7 +40,6 @@ collections:
               - { label: "Número de reseñas en Google", name: "count", widget: "string", required: false, hint: "Ej. 45" }
               - { label: "Cita de la reseña", name: "quote", widget: "text", required: false }
               - { label: "Nombre del cliente · Empresa", name: "author", widget: "string", required: false }
-          - { label: "Oficina en la Península (aparte de Progreso/Mérida)", name: "coveragePeninsulaOffice", widget: "string", required: false, hint: "Ej. Cancún" }
 
   - name: "services"
     label: "Catálogo de servicios"
