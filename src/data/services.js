@@ -1,0 +1,125 @@
+// Catálogo completo de servicios, organizado por área.
+// Estos son los valores por defecto (respaldo si content/services.json no
+// carga). Una vez editado desde /admin, el contenido real vive en
+// content/services.json.
+export const SERVICE_AREAS = [
+  {
+    area: 'Comercializadora aduanal',
+    icon: 'trade',
+    items: [
+      {
+        title: 'Importaciones mediante Padrón de Importadores',
+        text: 'Gestionar operaciones de importación bajo un esquema de cumplimiento documental y operativo.',
+      },
+      {
+        title: 'Padrón sectorial textil',
+        text: 'Apoyo en operaciones de importación de mercancías del sector textil que requieren cumplir con disposiciones específicas para su ingreso al país, considerando los requisitos correspondientes y evitando omisiones que puedan generar contratiempos.',
+      },
+      {
+        title: 'Liberación de mercancía retenida en aduana',
+        text: 'Revisamos la causa de retención de la mercancía, la documentación y los requisitos pendientes para determinar qué debe atenderse y cómo coordinar el proceso de liberación correspondiente.',
+      },
+    ],
+  },
+  {
+    area: 'Coordinación operativa y logística',
+    icon: 'logistics',
+    items: [
+      {
+        title: 'Coordinación entre cliente, proveedor, forwarder y agente aduanal',
+        text: 'Comunicación con todo el equipo involucrado en las operaciones de importaciones y exportaciones para que la operación avance de manera coordinada, organizada y eficiente.',
+      },
+      {
+        title: 'Gestión de maniobra y logística nacional',
+        text: 'Coordinación de las actividades necesarias para movilizar la mercancía dentro de México una vez que llega al punto correspondiente de la operación.',
+      },
+      {
+        title: 'Coordinación de transporte terrestre',
+        text: 'Coordinación del transporte terrestre necesario para trasladar la mercancía entre el punto de origen, aduana, almacén o destino final, según las necesidades de la operación.',
+      },
+    ],
+  },
+  {
+    area: 'Gestión aduanal integral',
+    icon: 'customs',
+    items: [
+      {
+        title: 'Importación y exportación marítima, aérea y terrestre',
+        text: 'Se gestionan operaciones de comercio exterior sin importar si la mercancía se transporta por barco, avión o transporte terrestre.',
+      },
+      {
+        title: 'Coordinación documental y regulatoria',
+        text: 'Se organiza y verifica la documentación y los requisitos que deben cumplirse para realizar correctamente una operación, para evitar incertidumbre y prevenir errores.',
+      },
+      {
+        title: 'Clasificación arancelaria',
+        text: 'Identificamos cómo clasificar una mercancía dentro del sistema arancelario para determinar los impuestos, regulaciones y requisitos que pueden aplicar a su importación o exportación.',
+      },
+    ],
+  },
+  {
+    area: 'Mensajería internacional',
+    icon: 'package',
+    items: [
+      {
+        title: 'Liberaciones formales',
+        text: 'Cuando una mercancía enviada por mensajería o paquetería requiere un proceso de liberación formal ante aduana, coordinamos la documentación necesaria para realizar su liberación.',
+      },
+      {
+        title: 'Coordinación con UPS, DHL, FedEx y otras mensajerías',
+        text: 'Coordinamos con la empresa de mensajería y los involucrados (cliente, mensajería, aduana y Distrito Aduanal) en la operación para dar seguimiento al proceso de liberación de la mercancía.',
+      },
+    ],
+  },
+  {
+    area: 'Consultoría y prevención de riesgos',
+    icon: 'shield',
+    items: [
+      {
+        title: 'Revisión documental previa',
+        text: 'Se revisa la documentación de la operación antes de que la mercancía se envíe o llegue a la aduana para identificar posibles inconsistencias, documentos faltantes o aspectos que deban atenderse.',
+      },
+      {
+        title: 'Validación de fracciones arancelarias',
+        text: 'Verificamos que la clasificación arancelaria considerada para tu mercancía sea la adecuada y que los requisitos derivados de ella hayan sido identificados y cumplidos.',
+      },
+      {
+        title: 'Evaluación de riesgos operativos',
+        text: 'Analizamos los puntos de una operación que podrían generar retrasos, costos adicionales o incumplimientos, y señalamos qué aspectos deben atenderse con prioridad.',
+      },
+      {
+        title: 'Asesoría estratégica en comercio exterior',
+        text: 'Evaluamos la operación antes de ejecutarla para identificar requisitos, posibles riesgos y aspectos que deben considerarse para tomar mejores decisiones, además de los beneficios que se obtendrán.',
+      },
+    ],
+  },
+  {
+    area: 'Servicios complementarios',
+    icon: 'advice',
+    items: [
+      {
+        title: 'Seguro de carga',
+        text: 'Ayudamos a proteger económicamente la mercancía frente a posibles riesgos que pueden ocurrir durante su traslado.',
+      },
+      {
+        title: 'Etiquetado',
+        text: 'Revisamos los requerimientos de etiquetado aplicables a la mercancía antes de su comercialización en México para prevenir riesgos de incumplimiento.',
+      },
+    ],
+  },
+];
+
+// Reemplaza SERVICE_AREAS con lo que venga de content/services.json.
+export async function hydrateServices() {
+  try {
+    const res = await fetch('./content/services.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (Array.isArray(data.areas) && data.areas.length) {
+      SERVICE_AREAS.length = 0;
+      SERVICE_AREAS.push(...data.areas);
+    }
+  } catch (e) {
+    // Sin conexión o sin content/services.json todavía: se mantiene el catálogo por defecto.
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "categories": [
+    {
+      "category": "Antes de la operación",
+      "items": [
+        {
+          "q": "¿Cuánto me va a costar traer mi producto?",
+          "a": "Con mucho gusto te brindamos la cotización exacta para que no te lleves sorpresas. Necesitaremos de tu apoyo con datos clave del producto; siempre preferimos dar costos reales desde el inicio."
+        },
+        {
+          "q": "¿Cuánto tiempo tarda?",
+          "a": "El tránsito depende de la ruta, naviera o aerolínea. En lo que sí firmamos compromiso total es en nuestros tiempos de respuesta y procesos internos."
+        },
+        {
+          "q": "¿Qué necesitan de mi parte para poder importar con ustedes?",
+          "a": "Para ahorrar contratiempos, necesitamos cuatro cosas básicas: tu información fiscal al día, orden de compra de tu proveedor, ficha técnica de tu proveedor, y si aplica, definir el etiquetado."
+        },
+        {
+          "q": "¿Qué documentos tengo que darles antes de que embarque mi proveedor?",
+          "a": "Necesitamos revisar juntos la factura comercial, packing list y la documentación de transporte. Dependiendo de lo que importes, revisamos si se necesita certificado de origen o permisos especiales."
+        },
+        {
+          "q": "¿Qué incoterm me conviene?",
+          "a": "Como regla general, FOB: el proveedor se encarga de entregar la carga a bordo en su puerto y de ahí nosotros tomamos el control sobre el flete, seguro y despacho en México."
+        },
+        {
+          "q": "¿Necesito contratar seguro de carga? ¿No responde la naviera?",
+          "a": "Sí, sugerimos contratarlo. Las navieras tienen esquemas de responsabilidad muy limitados, y ante cualquier evento, el seguro se encarga de cubrir el valor real de tu inversión."
+        },
+        {
+          "q": "¿Ustedes me podrían conseguir el proveedor?",
+          "a": "Actualmente no realizamos la búsqueda directa porque la calidad y especificaciones de tu producto son personales. Lo que sí hacemos por ti es investigar al proveedor que elijas, y validar que tu mercancía pueda entrar a México sin problemas ni costos extra."
+        }
+      ]
+    },
+    {
+      "category": "Durante la operación",
+      "items": [
+        {
+          "q": "¿Dónde va mi carga?",
+          "a": "Como parte de nuestros servicios, nos comprometemos a darte acompañamiento durante toda tu operación desde la salida de tu mercancía hasta la llegada a tus instalaciones. Recibirás actualizaciones en los momentos más importantes. Si surge alguna situación que pueda afectar la operación, nos encargaremos de informarte."
+        },
+        {
+          "q": "Ya llegó al puerto. ¿Por qué no sale hoy?",
+          "a": "Entendemos la urgencia y la importancia de tu operación; no podemos acelerar procesos de descarga, revalidación y revisión aduanal. Por eso priorizamos eficientizar los procesos para que el trámite se realice lo más rápido posible."
+        },
+        {
+          "q": "¿Por qué me cobran almacenajes y demoras si el retraso no fue mi culpa?",
+          "a": "Comprendemos lo frustrante que es ver esos cobros. Las terminales y navieras aplican las tarifas cuando la mercancía pasa más días de lo permitido en el recinto, sin importar el motivo. Nos encargamos de hacer todo lo que esté en nuestras manos para ahorrar este tipo de costos."
+        },
+        {
+          "q": "Me dicen que falta la NOM o el etiquetado. ¿Qué hacemos ahora?",
+          "a": "No te preocupes, esto tiene solución. Revisamos si podemos hacer el etiquetado directamente en un almacén aduanal o pedir una prórroga para cumplir con la norma sin que tu mercancía corra ningún riesgo de retención."
+        },
+        {
+          "q": "¿Por qué están elevados los impuestos?",
+          "a": null
+        }
+      ]
+    },
+    {
+      "category": "Después de la operación",
+      "intro": "La entrega no es el final. El expediente vive varios años más y es lo que sostiene la operación si hay una revisión.",
+      "items": [
+        {
+          "q": "Ya recibí mi mercancía. ¿Qué documentos me quedan y cuánto los guardo?",
+          "a": "Nos da mucho gusto que ya esté en tus manos, pero ojo: la entrega no es el final del proceso. Te entregamos tu expediente digital completo. Tienes que guardarlo al menos 5 años, ya que es el respaldo legal de tu operación ante cualquier auditoría."
+        },
+        {
+          "q": "¿Qué pasa si el SAT me revisa dentro de dos o tres años?",
+          "a": "No hay nada de qué preocuparse, tienes el expediente para respaldarte. Todo el proceso se hizo conforme a la ley y estaremos aquí para apoyarte con cualquier aclaración que sea necesaria."
+        },
+        {
+          "q": "Llegó dañado / faltó producto. ¿Quién responde?",
+          "a": "Lamentamos mucho la situación. Lo primero que debes hacer es documentar mediante fotos y videos antes de mover la carga. Si contratamos seguro, levantamos el reclamo inmediatamente; si fue tema de origen, te apoyamos con el reporte a tu proveedor."
+        },
+        {
+          "q": "¿Cómo sé que mi importación salió bien?",
+          "a": "Lo sabes porque la mercancía ya está segura en tu bodega, el pedimento está pagado y modulado en verde por la aduana concluyendo el despacho sin ningún contratiempo, y ya tienes en tus manos todo el expediente que comprueba la estancia legal de la carga en México. Con todo esto, tu operación queda perfectamente cerrada y respaldada: la operación fue un éxito."
+        }
+      ]
+    },
+    {
+      "category": "Sobre nuestros servicios",
+      "items": [
+        {
+          "q": "¿Qué servicios ofrecen?",
+          "list": [
+            "Asesoría en comercio exterior",
+            "Importaciones (aéreas, marítimas, courier)",
+            "Clasificación arancelaria",
+            "Verificación de regulaciones",
+            "Acompañamiento logístico",
+            "Facturación, etiquetado y cumplimiento NOM",
+            "Seguro de carga"
+          ]
+        },
+        {
+          "q": "¿Puedo importar como persona física?",
+          "a": "Sí, ayudamos a personas físicas y morales con y sin padrón de importadores."
+        },
+        {
+          "q": "¿Puedo importar aunque no tenga padrón de importadores?",
+          "a": "Sí, ofrecemos opciones para importar sin padrón o te ayudamos a activarlo si lo necesitas."
+        }
+      ]
+    },
+    {
+      "category": "Facturación y costos",
+      "items": [
+        {
+          "q": "¿Cuánto cuesta importar con ustedes?",
+          "a": "Nuestros honorarios dependen del tipo de operación. Siempre te damos una cotización clara y detallada antes de iniciar."
+        },
+        {
+          "q": "¿Puedo deducir mis facturas?",
+          "a": "Sí. Emitimos factura electrónica (CFDI) válida en México. Solo requerimos tus datos fiscales."
+        },
+        {
+          "q": "¿Cómo se calculan los impuestos de importación?",
+          "a": "Basado en la fracción arancelaria, el valor de tu mercancía, país de origen y regulaciones aplicables. Te ayudamos a estimarlos con claridad."
+        }
+      ]
+    },
+    {
+      "category": "Sobre los productos",
+      "items": [
+        {
+          "q": "¿Puedo importar electrónicos, suplementos, alimentos o cosméticos?",
+          "a": "Sí, pero algunos requieren permisos especiales (COFEPRIS, NOMs, etc.). Nosotros te decimos si aplica alguno."
+        },
+        {
+          "q": "¿Cómo sé si mi producto necesita un permiso o NOM?",
+          "a": "Enviándonos la factura proforma, descripción técnica o enlace del producto. Nosotros lo revisamos por ti."
+        },
+        {
+          "q": "¿Qué puedo importar a México legalmente?",
+          "a": "Casi todo, excepto productos restringidos o prohibidos por regulaciones (armas, medicamentos sin receta, productos falsificados, etc.)."
+        },
+        {
+          "q": "¿Cuántos impuestos se pagan al importar?",
+          "a": "Depende del tipo de mercancía, fracción arancelaria y su valor. Nosotros te ayudamos a calcularlo desde la cotización."
+        },
+        {
+          "q": "¿Por qué el pedimento no viene a mi nombre?",
+          "a": "Porque nosotros estamos dados de alta en el padrón de importadores, lo que nos permite legalmente hacer la importación a nuestro nombre y facilitarte todo el proceso. Además, nos hacemos responsables ante la autoridad durante el proceso aduanal, brindándote tranquilidad y respaldo legal en cada operación."
+        }
+      ]
+    },
+    {
+      "category": "Atención y contacto",
+      "items": [
+        {
+          "q": "¿Qué pasa si mi mercancía queda detenida?",
+          "a": "Te ayudamos a resolver cualquier aclaración o requerimiento ante la aduana."
+        },
+        {
+          "q": "¿Puedo agendar una videollamada para resolver mis dudas?",
+          "a": "¡Por supuesto! Agendamos vía Zoom o Google Meet."
+        },
+        {
+          "q": "¿Pueden manejar toda la logística por mí?",
+          "a": "Sí. Coordinamos desde el proveedor hasta tu almacén si lo deseas."
+        },
+        {
+          "q": "¿Atienden empresas y particulares?",
+          "a": "Sí. Trabajamos con personas físicas, PYMEs y grandes corporativos."
+        },
+        {
+          "q": "¿Por qué es mejor hacer el trámite con ustedes y no directo con el agente aduanal?",
+          "a": "Si bien el agente aduanal es un aliado, nosotros vemos la gestión integral del trámite: aduanal, logística, transporte y seguro de carga."
+        },
+        {
+          "q": "¿Se pueden realizar pagos en efectivo?",
+          "a": "No se aceptan pagos en efectivo."
+        }
+      ]
+    }
+  ]
+}

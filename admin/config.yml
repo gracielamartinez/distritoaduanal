@@ -1,0 +1,94 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Decap sube imágenes que se agreguen desde el editor a esta carpeta.
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# El editor no publica en un blog: guarda directo, sin editorial workflow.
+publish_mode: simple
+
+collections:
+  - name: "site"
+    label: "Datos generales"
+    files:
+      - name: "site"
+        label: "Contacto, redes y cifras"
+        file: "content/site.json"
+        fields:
+          - { label: "Nombre de la empresa", name: "name", widget: "string" }
+          - { label: "Frase (tagline)", name: "tagline", widget: "string" }
+          - { label: "Ciudad", name: "city", widget: "string" }
+          - { label: "Aduana de referencia", name: "customsOffice", widget: "string" }
+          - { label: "Teléfono (como se muestra)", name: "phoneDisplay", widget: "string" }
+          - { label: "Teléfono (enlace tel:+52...)", name: "phoneHref", widget: "string" }
+          - { label: "WhatsApp (formato 521 + 10 dígitos, sin espacios)", name: "whatsappNumber", widget: "string", pattern: ['^\d{10,13}$', "Solo números, sin espacios ni signos"] }
+          - { label: "Correo de contacto", name: "email", widget: "string" }
+          - { label: "Facebook (URL)", name: "facebookUrl", widget: "string" }
+          - { label: "Instagram (URL)", name: "instagramUrl", widget: "string" }
+          - label: "Cifras (Inicio)"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Años acompañando importadores", name: "years", widget: "string", required: false, hint: "Ej. 8" }
+              - { label: "Operaciones realizadas", name: "operations", widget: "string", required: false, hint: "Ej. 500+" }
+              - { label: "Aduanas donde operan", name: "customsOffices", widget: "string", required: false, hint: "Ej. 6" }
+              - { label: "Sectores atendidos", name: "sectors", widget: "string", required: false, hint: "Ej. 12" }
+          - label: "Reseña destacada (Inicio)"
+            name: "review"
+            widget: "object"
+            fields:
+              - { label: "Número de reseñas en Google", name: "count", widget: "string", required: false, hint: "Ej. 45" }
+              - { label: "Cita de la reseña", name: "quote", widget: "text", required: false }
+              - { label: "Nombre del cliente · Empresa", name: "author", widget: "string", required: false }
+          - { label: "Oficina en la Península (aparte de Progreso/Mérida)", name: "coveragePeninsulaOffice", widget: "string", required: false, hint: "Ej. Cancún" }
+
+  - name: "services"
+    label: "Catálogo de servicios"
+    files:
+      - name: "services"
+        label: "Áreas y servicios"
+        file: "content/services.json"
+        fields:
+          - label: "Áreas"
+            name: "areas"
+            widget: "list"
+            summary: "{{fields.area}}"
+            fields:
+              - { label: "Nombre del área", name: "area", widget: "string" }
+              - label: "Ícono"
+                name: "icon"
+                widget: "select"
+                options: ["trade", "logistics", "customs", "package", "shield", "advice"]
+                hint: "trade=maletín, logistics=camión, customs=barco, package=paquete, shield=escudo, advice=documento"
+              - label: "Servicios de esta área"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descripción", name: "text", widget: "text" }
+
+  - name: "faq"
+    label: "Preguntas frecuentes"
+    files:
+      - name: "faq"
+        label: "Categorías y preguntas"
+        file: "content/faq.json"
+        fields:
+          - label: "Categorías"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.category}}"
+            fields:
+              - { label: "Nombre de la categoría", name: "category", widget: "string" }
+              - { label: "Texto introductorio (opcional)", name: "intro", widget: "text", required: false }
+              - label: "Preguntas"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.q}}"
+                fields:
+                  - { label: "Pregunta", name: "q", widget: "string" }
+                  - { label: "Respuesta (dejar vacío solo si usas la lista de abajo)", name: "a", widget: "text", required: false }
+                  - { label: "Respuesta en lista (solo para '¿Qué servicios ofrecen?')", name: "list", widget: "list", field: { label: "Elemento", name: "item", widget: "string" }, required: false }
