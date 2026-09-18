@@ -1,0 +1,48 @@
+import React from 'react';
+import { Link } from '../router.js';
+import { BLOG_POSTS } from '../data/blog.js';
+import { whatsappLink } from '../config.js';
+
+function PostCard({ slug, title, excerpt }) {
+  return React.createElement(Link, { to: `/blog/${slug}`, className: 'blog-card' },
+    React.createElement('h3', null, title),
+    React.createElement('p', null, excerpt),
+    React.createElement('span', { className: 'link-underline' }, 'Leer más →'),
+  );
+}
+
+export default function Blog() {
+  return React.createElement(React.Fragment, null,
+
+    React.createElement('section', { className: 'section', style: { paddingTop: 92, paddingBottom: 60 } },
+      React.createElement('div', { className: 'wrap' },
+        React.createElement('div', { className: 'eyebrow' }, 'Recursos'),
+        React.createElement('h1', { className: 'page-title' }, 'Blog'),
+        React.createElement('p', { style: { color: '#4A5250', fontSize: 18, lineHeight: 1.65, maxWidth: 720 } },
+          'Guías prácticas de comercio exterior, escritas en español de verdad — sin tecnicismos innecesarios.',
+        ),
+      ),
+    ),
+
+    React.createElement('section', { className: 'px-60', style: { paddingBottom: 92 } },
+      React.createElement('div', { className: 'wrap', style: { padding: 0 } },
+        React.createElement('div', { className: 'blog-grid' },
+          BLOG_POSTS.map((p) => React.createElement(PostCard, { key: p.slug, ...p })),
+        ),
+      ),
+    ),
+
+    React.createElement('section', { className: 'final-cta' },
+      React.createElement('div', { className: 'wrap' },
+        React.createElement('div', null,
+          React.createElement('h2', null, '¿Tienes una duda que no cubrimos aquí?'),
+          React.createElement('p', null, 'Escríbenos y te respondemos el mismo día hábil.'),
+        ),
+        React.createElement('a', {
+          className: 'btn btn-dark', href: whatsappLink('Hola, tengo una duda sobre comercio exterior.'),
+          target: '_blank', rel: 'noopener noreferrer',
+        }, 'Escríbenos por WhatsApp'),
+      ),
+    ),
+  );
+}

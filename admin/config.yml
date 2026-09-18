@@ -105,3 +105,49 @@ collections:
               - { label: "Categoría (etiqueta)", name: "tag", widget: "string" }
               - { label: "Pregunta", name: "q", widget: "string" }
               - { label: "Respuesta", name: "a", widget: "text" }
+
+  - name: "blog"
+    label: "Blog"
+    files:
+      - name: "blog"
+        label: "Artículos"
+        file: "content/blog.json"
+        fields:
+          - label: "Artículos"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "URL (slug, sin espacios ni acentos)", name: "slug", widget: "string", pattern: ['^[a-z0-9-]+$', "Solo minúsculas, números y guiones"] }
+              - { label: "Resumen (aparece en la lista de artículos)", name: "excerpt", widget: "text" }
+              - label: "Contenido"
+                name: "body"
+                widget: "list"
+                summary: "{{fields.text}}{{fields.title}}"
+                types:
+                  - label: "Párrafo"
+                    name: "p"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "p" }
+                      - { label: "Texto", name: "text", widget: "text" }
+                  - label: "Subtítulo"
+                    name: "h3"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "h3" }
+                      - { label: "Texto", name: "text", widget: "string" }
+                  - label: "Lista con viñetas"
+                    name: "ul"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "ul" }
+                      - { label: "Elementos", name: "items", widget: "list", field: { label: "Elemento", name: "item", widget: "string" } }
+                  - label: "Plantilla (correo, ej.)"
+                    name: "template"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "template" }
+                      - { label: "Título de la plantilla", name: "title", widget: "string" }
+                      - { label: "Texto de la plantilla", name: "text", widget: "text" }

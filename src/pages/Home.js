@@ -176,6 +176,7 @@ export default function Home() {
       React.createElement('div', { className: 'wrap', style: { padding: 0, display: 'flex', gap: 28, flexWrap: 'wrap', marginTop: 28 } },
         React.createElement(Link, { to: '/preguntas-frecuentes', className: 'link-underline' }, 'Preguntas frecuentes →'),
         React.createElement(Link, { to: '/foro', className: 'link-underline' }, 'Foro →'),
+        React.createElement(Link, { to: '/blog', className: 'link-underline' }, 'Blog →'),
       ),
     ),
 

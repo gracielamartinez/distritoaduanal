@@ -369,6 +369,28 @@ input, textarea {
 .forum-thread h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; line-height: 1.35; }
 .forum-thread p { color: var(--text-body); font-size: 14px; line-height: 1.6; }
 
+/* ===== BLOG ===== */
+.blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.blog-card {
+  display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--grey-line);
+  padding: 28px; color: inherit; background: var(--white);
+}
+.blog-card:hover { border-color: var(--green); color: inherit; }
+.blog-card h3 { font-size: 19px; font-weight: 600; line-height: 1.3; }
+.blog-card p { color: var(--text-body); font-size: 14.5px; line-height: 1.6; flex: 1; }
+
+.blog-article { max-width: 760px; display: flex; flex-direction: column; gap: 22px; }
+.blog-p { color: #333B39; font-size: 17px; line-height: 1.75; }
+.blog-h3 { font-size: 22px; font-weight: 600; margin-top: 10px; }
+.blog-ul { display: flex; flex-direction: column; gap: 10px; padding-left: 22px; color: #333B39; font-size: 17px; line-height: 1.65; }
+.blog-ul li { padding-left: 4px; }
+.blog-template { background: var(--grey-bg); border: 1px solid var(--grey-line); padding: 24px; }
+.blog-template-title { font-weight: 600; font-size: 14px; color: var(--green-deep); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+.blog-template pre {
+  white-space: pre-wrap; font-family: 'Roboto', sans-serif; font-size: 15px;
+  line-height: 1.6; color: var(--ink); margin: 0;
+}
+
 /* ===== NOSOTROS: MISIÓN / VISIÓN / PROPUESTA ===== */
 .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .pillar { border-top: 3px solid var(--green); padding-top: 22px; }
@@ -406,6 +428,7 @@ input, textarea {
   .stat:nth-child(-n+2) { border-top: none; }
   .svc-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .forum-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 900px) {
@@ -448,6 +471,7 @@ input, textarea {
   .svc-items { grid-template-columns: 1fr; }
   .pillars { grid-template-columns: 1fr; }
   .forum-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
