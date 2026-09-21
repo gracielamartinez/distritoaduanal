@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IconCheck } from '../icons.js';
 
-function Chevron({ open }) {
+export function Chevron({ open }) {
   return React.createElement('svg', {
     width: 18, height: 18, viewBox: '0 0 24 24', fill: 'none', stroke: '#35A94C',
     strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round',

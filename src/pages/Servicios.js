@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SERVICE_AREAS } from '../data/services.js';
 import { whatsappLink } from '../config.js';
 import { IconTrade, IconLogistics, IconCustoms, IconPackage, IconShield, IconAdvice, IconCheck } from '../icons.js';
+import { Chevron } from '../components/Accordion.js';
 
 const AREA_ICONS = {
   trade: IconTrade,
@@ -12,14 +13,21 @@ const AREA_ICONS = {
   advice: IconAdvice,
 };
 
-function ServiceArea({ area, icon, items }) {
+function ServiceArea({ area, icon, items, defaultOpen = false }) {
+  const [open, setOpen] = useState(defaultOpen);
   const AreaIcon = AREA_ICONS[icon] || IconAdvice;
   return React.createElement('div', { className: 'svc-area' },
-    React.createElement('h3', { className: 'svc-area-title' },
+    React.createElement('button', {
+      className: 'svc-area-title svc-area-toggle',
+      onClick: () => setOpen((v) => !v),
+      'aria-expanded': open,
+    },
       React.createElement('span', { className: 'svc-area-icon' }, React.createElement(AreaIcon, { size: 22, stroke: '#1F6B32', strokeWidth: 1.6 })),
-      area,
+      React.createElement('span', { className: 'svc-area-title-text' }, area),
+      React.createElement('span', { className: 'svc-area-count' }, `${items.length} servicio${items.length === 1 ? '' : 's'}`),
+      React.createElement(Chevron, { open }),
     ),
-    React.createElement('div', { className: 'svc-items' },
+    open && React.createElement('div', { className: 'svc-items' },
       items.map((item) => React.createElement('div', { className: 'svc-item', key: item.title },
         React.createElement('div', { className: 'svc-item-title' },
           React.createElement(IconCheck, { size: 16, stroke: '#35A94C', strokeWidth: 2 }),
@@ -39,7 +47,7 @@ export default function Servicios() {
         React.createElement('div', { className: 'eyebrow' }, 'Servicios'),
         React.createElement('h1', { className: 'page-title' }, '¿Cómo explicamos nuestros servicios?'),
         React.createElement('p', { style: { color: '#4A5250', fontSize: 18, lineHeight: 1.65, maxWidth: 720 } },
-          'Organizamos nuestro trabajo en seis áreas. Cada una agrupa los servicios puntuales que puedes necesitar, con una explicación clara de en qué consisten — sin tecnicismos innecesarios.',
+          'Organizamos nuestro trabajo en seis áreas. Da clic en cada una para ver el detalle de lo que incluye — sin tecnicismos innecesarios.',
         ),
       ),
     ),
@@ -47,7 +55,7 @@ export default function Servicios() {
     React.createElement('section', { className: 'px-60', style: { paddingBottom: 92 } },
       React.createElement('div', { className: 'wrap', style: { padding: 0 } },
         React.createElement('div', { className: 'svc-areas' },
-          SERVICE_AREAS.map((a) => React.createElement(ServiceArea, { key: a.area, ...a })),
+          SERVICE_AREAS.map((a, i) => React.createElement(ServiceArea, { key: a.area, ...a, defaultOpen: i === 0 })),
         ),
       ),
     ),

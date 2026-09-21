@@ -334,11 +334,20 @@ input, textarea {
   font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; font-weight: 600;
   color: var(--green-deep); margin-bottom: 26px;
 }
+.svc-area-toggle {
+  width: 100%; text-align: left; margin-bottom: 0; padding: 6px 0;
+}
+.svc-area-toggle:hover { color: var(--green-dark); }
+.svc-area-title-text { flex: 1; }
+.svc-area-count {
+  flex: 0 0 auto; font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px; font-weight: 500; color: var(--text-faint);
+}
 .svc-area-icon {
   flex: 0 0 auto; width: 42px; height: 42px; border-radius: 50%;
   background: var(--green-tint); display: flex; align-items: center; justify-content: center;
 }
-.svc-items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.svc-items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 26px; }
 .svc-item { border: 1px solid var(--grey-line); padding: 24px 26px; background: var(--grey-bg); }
 .svc-item-title { display: flex; align-items: flex-start; gap: 10px; font-weight: 600; font-size: 16px; margin-bottom: 8px; }
 .svc-item-title svg { flex: 0 0 auto; margin-top: 3px; }
