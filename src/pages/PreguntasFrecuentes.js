@@ -62,7 +62,7 @@ export default function PreguntasFrecuentes() {
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', null,
           React.createElement('h2', null, '¿Tu pregunta no está aquí?'),
-          React.createElement('p', null, 'Escríbenos y te respondemos el mismo día hábil.'),
+          React.createElement('p', null, 'Escríbenos por WhatsApp y con gusto te ayudamos.'),
         ),
         React.createElement('a', {
           className: 'btn btn-dark', href: whatsappLink('Hola, tengo una pregunta que no encontré en su sección de preguntas frecuentes.'),

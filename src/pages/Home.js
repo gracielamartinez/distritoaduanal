@@ -4,6 +4,8 @@ import {
   IconCustoms, IconTrade, IconLogistics, IconAdvice, IconShield, IconStar,
 } from '../icons.js';
 import QuoteForm from '../components/QuoteForm.js';
+import PhoneField from '../components/PhoneField.js';
+import { COUNTRIES } from '../data/countries.js';
 import { whatsappLink, SITE } from '../config.js';
 
 const AUDIENCE_TEXT = 'Acompañamos a personas físicas, emprendedores, pequeñas y grandes empresas en cada paso de su camino. Sabemos lo importante que es que tus productos lleguen seguros y a tiempo. Nos encargamos de agilizar toda tu logística, sin importar el volumen o el origen de tus cargas. Te acompañamos en cada etapa con una asesoría a tu medida y un equipo experto dedicado a cuidar de tu negocio.';
@@ -75,7 +77,6 @@ function OperationBlock() {
               ),
         ),
         React.createElement('div', { className: 'op-form' },
-          React.createElement('div', { className: 'op-form-badge' }, 'Te respondemos el mismo día hábil'),
           React.createElement(QuoteForm, null),
         ),
       ),
@@ -101,9 +102,9 @@ export default function Home() {
       React.createElement(HeroDeco, null),
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', { className: 'hero-copy' },
-          React.createElement('div', { className: 'eyebrow' }, 'Comercializadora y logística de comercio exterior'),
+          React.createElement('div', { className: 'eyebrow' }, 'Comercializadora aduanal y logística de comercio exterior'),
           React.createElement('h1', null, 'Que las fronteras no detengan tu negocio'),
-          React.createElement('p', null, 'Te acompañamos en cada paso de tu importación o exportación, desde el primer correo a tu proveedor hasta que la mercancía llega a tu bodega.'),
+          React.createElement('p', null, 'Te acompañamos en cada paso de tu importación o exportación en México: despacho aduanal, clasificación arancelaria y logística, desde el primer correo a tu proveedor hasta que la mercancía llega a tu bodega.'),
           React.createElement('div', { className: 'hero-actions' },
             React.createElement(Link, { to: '/servicios', className: 'btn btn-outline-light' }, 'Ver servicios'),
           ),
@@ -137,7 +138,7 @@ export default function Home() {
     React.createElement('section', { className: 'section' },
       React.createElement('div', { className: 'wrap' },
         React.createElement('h2', null, 'Cuatro formas de trabajar contigo'),
-        React.createElement('p', { className: 'section-lead' }, 'Desde una sola operación hasta el manejo completo de tu comercio exterior.'),
+        React.createElement('p', { className: 'section-lead' }, 'Despacho aduanal, comercializadora, logística internacional y asesoría en comercio exterior — desde una sola operación hasta el manejo completo de tus importaciones y exportaciones.'),
         React.createElement('div', { className: 'services-grid' },
           SERVICES.map((s) => React.createElement(ServiceCard, { key: s.title, ...s })),
         ),
@@ -187,7 +188,7 @@ export default function Home() {
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', null,
           React.createElement('h2', null, 'Cuéntanos qué quieres traer'),
-          React.createElement('p', null, 'Sin compromiso, y te respondemos el mismo día hábil.'),
+          React.createElement('p', null, 'Sin compromiso. Te ayudamos a resolverlo por WhatsApp o llamada.'),
         ),
         React.createElement('div', { className: 'final-cta-actions' },
           React.createElement('a', {
@@ -228,33 +229,85 @@ function SectionAccent() {
   );
 }
 
+const VALOR_OPTIONS = [
+  'Menos de $50,000 MXN',
+  '$50,000 – $200,000 MXN',
+  '$200,000 – $500,000 MXN',
+  '$500,000 – $1,000,000 MXN',
+  'Más de $1,000,000 MXN',
+];
+
+function encodeFormData(data) {
+  return Object.keys(data)
+    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+    .join('&');
+}
+
 function HeroForm() {
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [email, setEmail] = useState('');
+  const [tel, setTel] = useState('');
+  const [country, setCountry] = useState(COUNTRIES[0]);
   const [producto, setProducto] = useState('');
   const [origen, setOrigen] = useState('');
-  const [tel, setTel] = useState('');
+  const [aduanaDestino, setAduanaDestino] = useState('');
+  const [valorMercancia, setValorMercancia] = useState('');
+  const [mensaje, setMensaje] = useState('');
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!nombre.trim() || !apellido.trim() || !email.trim() || !tel.trim()) return;
+    const telFull = `${country[1]} ${tel}`;
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeFormData({
+        'form-name': 'cotizacion-hero',
+        nombre, apellido, email, telefono: telFull, producto, origen,
+        aduanaDestino, valorMercancia, mensaje,
+      }),
+    }).catch(() => {});
+
     const lines = [
-      'Hola, quiero que me asesoren.',
+      `Hola, soy ${nombre} ${apellido}.`,
+      'Quiero solicitar información.',
       producto ? `Producto: ${producto}` : null,
-      origen ? `Desde: ${origen}` : null,
-      tel ? `Mi WhatsApp: ${tel}` : null,
+      origen ? `Origen / ubicación de la mercancía: ${origen}` : null,
+      aduanaDestino ? `Aduana de destino: ${aduanaDestino}` : null,
+      valorMercancia ? `Valor aproximado: ${valorMercancia}` : null,
+      mensaje ? mensaje : null,
+      `Correo: ${email}`,
+      `Teléfono: ${telFull}`,
     ].filter(Boolean);
     window.open(whatsappLink(lines.join('\n')), '_blank', 'noopener,noreferrer');
     setSent(true);
   };
 
   return React.createElement('div', { className: 'op-form hero-form-card' },
-    React.createElement('div', { className: 'op-form-badge' }, 'Te respondemos el mismo día hábil'),
     sent
       ? React.createElement('p', { style: { color: '#1F6B32', fontWeight: 600 } }, '¡Gracias! Se abrió WhatsApp con tu mensaje listo para enviar.')
-      : React.createElement('form', { className: 'form-fields', onSubmit: handleSubmit },
-          React.createElement('input', { type: 'text', placeholder: '¿Qué quieres traer?', value: producto, onChange: (e) => setProducto(e.target.value) }),
-          React.createElement('input', { type: 'text', placeholder: '¿Desde dónde?', value: origen, onChange: (e) => setOrigen(e.target.value) }),
-          React.createElement('input', { type: 'tel', placeholder: 'Tu WhatsApp', value: tel, onChange: (e) => setTel(e.target.value) }),
-          React.createElement('button', { type: 'submit', className: 'form-submit' }, 'Quiero que me asesoren'),
+      : React.createElement('form', { className: 'form-fields', onSubmit: handleSubmit, name: 'cotizacion-hero', 'data-netlify': 'true' },
+          React.createElement('input', { type: 'hidden', name: 'form-name', value: 'cotizacion-hero' }),
+          React.createElement('div', { className: 'form-row' },
+            React.createElement('input', { type: 'text', placeholder: 'Nombre*', value: nombre, onChange: (e) => setNombre(e.target.value), required: true }),
+            React.createElement('input', { type: 'text', placeholder: 'Apellido*', value: apellido, onChange: (e) => setApellido(e.target.value), required: true }),
+          ),
+          React.createElement('input', { type: 'email', placeholder: 'Correo electrónico*', value: email, onChange: (e) => setEmail(e.target.value), required: true }),
+          React.createElement(PhoneField, { value: tel, onChange: setTel, country, onCountryChange: setCountry, placeholder: 'Teléfono*' }),
+          React.createElement('input', { type: 'text', placeholder: 'Producto que quieres importar', value: producto, onChange: (e) => setProducto(e.target.value) }),
+          React.createElement('input', { type: 'text', placeholder: 'Origen / ubicación de la mercancía (ej. Shanghái)', value: origen, onChange: (e) => setOrigen(e.target.value) }),
+          React.createElement('input', { type: 'text', placeholder: 'Aduana de destino (ej. Manzanillo, Nuevo Laredo)', value: aduanaDestino, onChange: (e) => setAduanaDestino(e.target.value) }),
+          React.createElement('select', {
+            value: valorMercancia, onChange: (e) => setValorMercancia(e.target.value), required: true,
+          },
+            React.createElement('option', { value: '' }, 'Valor aproximado de la mercancía'),
+            VALOR_OPTIONS.map((v) => React.createElement('option', { key: v, value: v }, v)),
+          ),
+          React.createElement('textarea', { placeholder: 'Cuéntanos más sobre tu carga o proyecto', value: mensaje, onChange: (e) => setMensaje(e.target.value) }),
+          React.createElement('button', { type: 'submit', className: 'form-submit' }, 'Solicitar información'),
         ),
   );
 }

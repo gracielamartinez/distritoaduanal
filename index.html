@@ -3,13 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Distrito Aduanal — Comercializadora y logística de comercio exterior</title>
-  <meta name="description" content="Comercializadora y logística de comercio exterior. Despacho de importación y exportación, clasificación arancelaria y asesoría en comercio exterior." />
+  <title>Distrito Aduanal | Comercializadora aduanal y logística de importación y exportación en México</title>
+  <meta name="description" content="Importa y exporta sin complicaciones. Comercializadora aduanal, despacho de importación y exportación, clasificación arancelaria, cálculo de impuestos y logística de comercio exterior en toda la República Mexicana." />
+  <meta name="keywords" content="comercializadora aduanal, importar a México, exportar desde México, despacho aduanal, clasificación arancelaria, logística internacional, comercio exterior México, importación y exportación, padrón de importadores, aranceles México" />
+  <link rel="canonical" href="https://distritoaduanal.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Distrito Aduanal" />
+  <meta property="og:title" content="Distrito Aduanal | Comercializadora aduanal y logística de comercio exterior" />
+  <meta property="og:description" content="Importa y exporta sin complicaciones. Despacho aduanal, clasificación arancelaria y logística de comercio exterior en toda la República Mexicana." />
+  <meta property="og:url" content="https://distritoaduanal.netlify.app/" />
+  <meta property="og:image" content="https://distritoaduanal.netlify.app/assets/logo-dark.png" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="robots" content="index, follow" />
   <link rel="icon" href="./assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Distrito Aduanal",
+    "description": "Comercializadora aduanal y logística de comercio exterior: despacho de importación y exportación, clasificación arancelaria y asesoría para importar y exportar en México.",
+    "url": "https://distritoaduanal.netlify.app/",
+    "telephone": "+52 999 604 7334",
+    "email": "soluciones@distritoaduanal.com",
+    "areaServed": "MX",
+    "sameAs": [
+      "https://www.facebook.com/share/1MLqFhxfGd/?mibextid=wwXIfr",
+      "https://www.instagram.com/distritoaduanal?stkn=MmN0dGd5cnNmZHFs"
+    ]
+  }
+  </script>
   <script>
     // Los enlaces de invitación/recuperación de Netlify Identity abren esta
     // página con el token en la URL; sin esto se quedan aquí sin hacer nada.
@@ -30,6 +57,23 @@
 </head>
 <body>
   <div id="root"></div>
+
+  <!-- Formulario oculto solo para que Netlify Forms lo detecte en el HTML
+       estático (el sitio es una SPA, así que el bot de Netlify no ve el
+       formulario real que arma React). El envío real lo hace React vía
+       fetch a este mismo nombre de formulario. -->
+  <form name="cotizacion-hero" data-netlify="true" hidden>
+    <input type="text" name="nombre" />
+    <input type="text" name="apellido" />
+    <input type="email" name="email" />
+    <input type="text" name="telefono" />
+    <input type="text" name="producto" />
+    <input type="text" name="origen" />
+    <input type="text" name="aduanaDestino" />
+    <input type="text" name="valorMercancia" />
+    <textarea name="mensaje"></textarea>
+  </form>
+
   <script type="module" src="./src/main.js"></script>
 </body>
 </html>

@@ -40,7 +40,7 @@ export default function Blog() {
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', null,
           React.createElement('h2', null, '¿Tienes una duda que no cubrimos aquí?'),
-          React.createElement('p', null, 'Escríbenos y te respondemos el mismo día hábil.'),
+          React.createElement('p', null, 'Escríbenos por WhatsApp y con gusto te ayudamos.'),
         ),
         React.createElement('a', {
           className: 'btn btn-dark', href: whatsappLink('Hola, tengo una duda sobre comercio exterior.'),

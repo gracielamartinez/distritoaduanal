@@ -136,7 +136,7 @@ export default function Foro() {
         React.createElement('div', { className: 'card', style: { maxWidth: 560 } },
           React.createElement('h2', { style: { fontSize: 24, fontWeight: 600, marginBottom: 10 } }, '¿Tienes una pregunta nueva?'),
           React.createElement('p', { style: { color: '#6B7472', fontSize: 15, lineHeight: 1.6, marginBottom: 24 } },
-            'Escríbela aquí. No se publica en el sitio — llega directo a nuestro equipo por WhatsApp y te respondemos el mismo día hábil.',
+            'Escríbela aquí. No se publica en el sitio — llega directo a nuestro equipo por WhatsApp.',
           ),
           React.createElement(AskForm, null),
         ),
