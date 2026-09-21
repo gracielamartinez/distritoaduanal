@@ -98,6 +98,7 @@ export default function Home() {
 
     // ===== HERO =====
     React.createElement('section', { className: 'hero' },
+      React.createElement(HeroDeco, null),
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', { className: 'hero-copy' },
           React.createElement('div', { className: 'eyebrow' }, 'Comercializadora y logística de comercio exterior'),
@@ -114,6 +115,7 @@ export default function Home() {
     // ===== HACEMOS EQUIPO CONTIGO =====
     React.createElement('section', { className: 'what-is', style: { paddingTop: 92 } },
       React.createElement('div', { className: 'what-is-inner' },
+        React.createElement(SectionAccent, null),
         React.createElement('h2', null, 'Hacemos equipo contigo'),
         React.createElement('p', null, 'El comercio exterior puede sentirse como un idioma que nadie te enseñó. Nosotros lo hablamos perfecto — te aseguramos acompañarte hasta que tú también lo entiendas.'),
         React.createElement('div', { className: 'callout' },
@@ -196,6 +198,33 @@ export default function Home() {
         ),
       ),
     ),
+  );
+}
+
+// Gráfico decorativo del hero: formas abstractas en los tonos de marca,
+// puramente visual (aria-hidden), detrás del copy y el formulario.
+function HeroDeco() {
+  return React.createElement('svg', {
+    className: 'hero-deco', viewBox: '0 0 600 480', 'aria-hidden': 'true', preserveAspectRatio: 'xMaxYMid slice',
+  },
+    React.createElement('circle', { cx: 520, cy: 90, r: 160, fill: 'none', stroke: '#375A6B', strokeWidth: 1 }),
+    React.createElement('circle', { cx: 560, cy: 340, r: 110, fill: 'none', stroke: '#2C4C5C', strokeWidth: 1 }),
+    React.createElement('circle', { cx: 470, cy: 360, r: 6, fill: '#35A94C' }),
+    React.createElement('circle', { cx: 560, cy: 150, r: 4, fill: '#35A94C', opacity: 0.7 }),
+    React.createElement('circle', { cx: 420, cy: 60, r: 3, fill: '#B9C2BF', opacity: 0.5 }),
+    React.createElement('path', { d: 'M380 420 Q470 360 600 380', fill: 'none', stroke: '#2C4C5C', strokeWidth: 1, strokeDasharray: '2 6' }),
+  );
+}
+
+// Acento decorativo sobre un título de sección: tres puntos en los tonos
+// de marca, para introducir la sección sin depender solo de texto.
+function SectionAccent() {
+  return React.createElement('svg', {
+    width: 46, height: 10, viewBox: '0 0 46 10', 'aria-hidden': 'true', style: { margin: '0 auto 18px' },
+  },
+    React.createElement('circle', { cx: 5, cy: 5, r: 5, fill: '#35A94C' }),
+    React.createElement('circle', { cx: 23, cy: 5, r: 3.5, fill: '#268039' }),
+    React.createElement('circle', { cx: 39, cy: 5, r: 2, fill: '#B9C2BF' }),
   );
 }
 

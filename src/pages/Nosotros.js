@@ -1,5 +1,6 @@
 import React from 'react';
 import { whatsappLink, SITE } from '../config.js';
+import { IconCompass, IconEye, IconGem } from '../icons.js';
 
 const STORY_PARAGRAPHS = [
   'Detrás de Distrito Aduanal hay un equipo de personas que entiende perfectamente lo desgastante que puede ser enfrentarse a la burocracia, los trámites confusos y las sorpresas del comercio internacional.',
@@ -13,14 +14,17 @@ const STORY_PARAGRAPHS = [
 const PILLARS = [
   {
     title: 'Misión',
+    Icon: IconCompass,
     text: 'Brindar asesoría especializada y personalizada para gestionar operaciones de comercio interior y exterior, ofreciendo un servicio eficiente, confiable y transparente.',
   },
   {
     title: 'Visión',
+    Icon: IconEye,
     text: 'Posicionar a la compañía como referente del sector, distinguiéndose por su excelencia, confiabilidad y compromiso con la satisfacción de sus clientes.',
   },
   {
     title: 'Propuesta de valor',
+    Icon: IconGem,
     text: 'Ofrecer un acompañamiento integral en operaciones de comercio interior y exterior, proponer soluciones estratégicas con enfoque en la prevención de riesgos y la eficiencia operativa, garantizando procesos transparentes, honestos y confiables para obtener resultados que satisfagan las necesidades de los clientes.',
   },
 ];
@@ -45,6 +49,7 @@ export default function Nosotros() {
       React.createElement('div', { className: 'wrap', style: { padding: 0 } },
         React.createElement('div', { className: 'pillars' },
           PILLARS.map((p) => React.createElement('div', { className: 'pillar', key: p.title },
+            React.createElement('span', { className: 'pillar-icon' }, React.createElement(p.Icon, { size: 22, stroke: '#1F6B32', strokeWidth: 1.6 })),
             React.createElement('h3', null, p.title),
             React.createElement('p', null, p.text),
           )),

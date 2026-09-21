@@ -2,9 +2,13 @@ import React from 'react';
 import { Link } from '../router.js';
 import { BLOG_POSTS } from '../data/blog.js';
 import { whatsappLink } from '../config.js';
+import { POST_ICONS } from '../data/blogIcons.js';
+import { IconDocument } from '../icons.js';
 
 function PostCard({ slug, title, excerpt }) {
+  const PostIcon = POST_ICONS[slug] || IconDocument;
   return React.createElement(Link, { to: `/blog/${slug}`, className: 'blog-card' },
+    React.createElement('span', { className: 'blog-cover' }, React.createElement(PostIcon, { size: 26, stroke: '#0D2637', strokeWidth: 1.5 })),
     React.createElement('h3', null, title),
     React.createElement('p', null, excerpt),
     React.createElement('span', { className: 'link-underline' }, 'Leer más →'),

@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from '../router.js';
 import { whatsappLink } from '../config.js';
+import { IconDocument, IconClock, IconFlagCheck, IconBuilding, IconAdvice, IconInvoice } from '../icons.js';
+
+const TAG_ICONS = {
+  'Antes de la operación': IconDocument,
+  'Durante la operación': IconClock,
+  'Después de la operación': IconFlagCheck,
+  'Sobre los productos': IconBuilding,
+  'Sobre nuestros servicios': IconAdvice,
+  'Facturación y costos': IconInvoice,
+};
 
 // Temas más comentados. Estos son los valores por defecto (respaldo si
 // content/foro.json no carga). Una vez editado desde /admin, el contenido
@@ -56,8 +66,12 @@ export async function hydrateForo() {
 }
 
 function ThreadCard({ tag, q, a }) {
+  const TagIcon = TAG_ICONS[tag] || IconDocument;
   return React.createElement('div', { className: 'forum-thread' },
-    React.createElement('span', { className: 'forum-tag' }, tag),
+    React.createElement('span', { className: 'forum-tag' },
+      React.createElement(TagIcon, { size: 13, stroke: '#1F6B32', strokeWidth: 2 }),
+      tag,
+    ),
     React.createElement('h3', null, q),
     React.createElement('p', null, a),
   );

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from '../router.js';
 import { BLOG_POSTS } from '../data/blog.js';
 import { whatsappLink } from '../config.js';
+import { POST_ICONS } from '../data/blogIcons.js';
+import { IconDocument } from '../icons.js';
 
 function Block(block, i) {
   if (block.type === 'h3') return React.createElement('h3', { key: i, className: 'blog-h3' }, block.text);
@@ -27,10 +29,13 @@ export default function BlogPost({ slug }) {
     );
   }
 
+  const PostIcon = POST_ICONS[post.slug] || IconDocument;
+
   return React.createElement(React.Fragment, null,
     React.createElement('section', { className: 'section', style: { paddingTop: 92, paddingBottom: 20 } },
       React.createElement('div', { className: 'wrap' },
         React.createElement(Link, { to: '/blog', className: 'link-underline' }, '← Blog'),
+        React.createElement('span', { className: 'blog-cover blog-cover-lg' }, React.createElement(PostIcon, { size: 30, stroke: '#0D2637', strokeWidth: 1.4 })),
         React.createElement('h1', { className: 'page-title', style: { marginTop: 20, maxWidth: 780 } }, post.title),
       ),
     ),

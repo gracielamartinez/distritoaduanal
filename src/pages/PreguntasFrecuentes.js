@@ -3,10 +3,25 @@ import { FAQ_CATEGORIES } from '../data/faq.js';
 import AccordionItem, { AccordionList } from '../components/Accordion.js';
 import { whatsappLink } from '../config.js';
 import { Link } from '../router.js';
+import { IconDocument, IconClock, IconFlagCheck, IconAdvice, IconInvoice, IconPackage, IconChat } from '../icons.js';
+
+const CATEGORY_ICONS = {
+  'Antes de la operación': IconDocument,
+  'Durante la operación': IconClock,
+  'Después de la operación': IconFlagCheck,
+  'Sobre nuestros servicios': IconAdvice,
+  'Facturación y costos': IconInvoice,
+  'Sobre los productos': IconPackage,
+  'Atención y contacto': IconChat,
+};
 
 function CategoryBlock({ category, intro, items }) {
+  const CatIcon = CATEGORY_ICONS[category] || IconDocument;
   return React.createElement('div', { className: 'svc-area' },
-    React.createElement('h3', { className: 'svc-area-title' }, category),
+    React.createElement('h3', { className: 'svc-area-title' },
+      React.createElement('span', { className: 'svc-area-icon' }, React.createElement(CatIcon, { size: 22, stroke: '#1F6B32', strokeWidth: 1.6 })),
+      category,
+    ),
     intro && React.createElement('p', { className: 'faq-category-intro' }, intro),
     React.createElement('div', { className: 'faq-list-wrap' },
       items.map((item) => React.createElement(AccordionItem, { key: item.q, question: item.q },
