@@ -3,6 +3,7 @@ import { Link } from '../router.js';
 import { BLOG_POSTS } from '../data/blog.js';
 import { whatsappLink } from '../config.js';
 import { POST_ICONS } from '../data/blogIcons.js';
+import { POST_IMAGES } from '../data/blogImages.js';
 import { IconDocument } from '../icons.js';
 
 function Block(block, i) {
@@ -30,11 +31,15 @@ export default function BlogPost({ slug }) {
   }
 
   const PostIcon = POST_ICONS[post.slug] || IconDocument;
+  const image = POST_IMAGES[post.slug];
 
   return React.createElement(React.Fragment, null,
-    React.createElement('section', { className: 'section', style: { paddingTop: 92, paddingBottom: 20 } },
+    React.createElement('section', {
+      className: 'page-banner',
+      style: { backgroundImage: `url('${image}')`, paddingBottom: 76 },
+    },
       React.createElement('div', { className: 'wrap' },
-        React.createElement(Link, { to: '/blog', className: 'link-underline' }, '← Blog'),
+        React.createElement(Link, { to: '/blog', className: 'link-underline', style: { color: '#9BE6AC', borderColor: '#9BE6AC' } }, '← Blog'),
         React.createElement('span', { className: 'blog-cover blog-cover-lg' }, React.createElement(PostIcon, { size: 30, stroke: '#0D2637', strokeWidth: 1.4 })),
         React.createElement('h1', { className: 'page-title', style: { marginTop: 20, maxWidth: 780 } }, post.title),
       ),

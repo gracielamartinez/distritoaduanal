@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from '../router.js';
 import {
-  IconCustoms, IconTrade, IconLogistics, IconAdvice, IconShield, IconStar,
+  IconCustoms, IconTrade, IconLogistics, IconAdvice, IconShield,
 } from '../icons.js';
 import QuoteForm from '../components/QuoteForm.js';
 import PhoneField from '../components/PhoneField.js';
@@ -15,15 +15,6 @@ const SERVICES = [
   { Icon: IconTrade, title: 'Comercializadora', text: '¿No tienes padrón de importadores? Importamos por ti, con todo en regla.' },
   { Icon: IconLogistics, title: 'Logística y fletes', text: 'Envíos nacionales e internacionales, venta de guías y coordinación puerta a puerta.' },
   { Icon: IconAdvice, title: 'Asesoría', text: 'Te decimos qué necesitas antes de comprar: permisos, normas e impuestos.' },
-];
-
-// Se calculan al momento de renderizar (no al importar el módulo) para que
-// reflejen el contenido ya cargado desde content/site.json vía hydrateSite().
-const getStats = () => [
-  { value: SITE.stats.clients, label: 'clientes atendidos' },
-  { value: SITE.stats.operations, label: 'operaciones realizadas' },
-  { value: SITE.stats.customsOffices, label: 'aduanas donde operamos' },
-  { value: SITE.stats.sectors, label: 'sectores atendidos' },
 ];
 
 function ServiceCard({ Icon, title, text, to }) {
@@ -146,18 +137,19 @@ export default function Home() {
       ),
     ),
 
-    // ===== ¿CÓMO ES TU OPERACIÓN? =====
-    React.createElement('div', { id: 'operacion' }, React.createElement(OperationBlock, null)),
-
-    // ===== CIFRAS =====
-    React.createElement('section', { className: 'stats-outer' },
-      React.createElement('div', { className: 'stats' },
-        getStats().map((s) => React.createElement('div', { className: 'stat', key: s.label },
-          React.createElement('div', { className: 'num' }, s.value || React.createElement('span', { className: 'fill-me' }, 'X')),
-          React.createElement('div', { className: 'label' }, s.label),
-        )),
+    // ===== BANNER CON FOTO =====
+    React.createElement('section', {
+      className: 'photo-banner',
+      style: { backgroundImage: "url('./assets/photos/banner-containers.jpg')" },
+    },
+      React.createElement('div', { className: 'photo-banner-inner' },
+        React.createElement('h2', null, 'Conectamos tu negocio con el mundo, aduana por aduana'),
+        React.createElement('p', null, 'Desde el contenedor hasta el pedimento, nos encargamos de que tu mercancía cruce la frontera sin contratiempos.'),
       ),
     ),
+
+    // ===== ¿CÓMO ES TU OPERACIÓN? =====
+    React.createElement('div', { id: 'operacion' }, React.createElement(OperationBlock, null)),
 
     // ===== SIN COSTOS SORPRESA =====
     React.createElement('section', { className: 'banner-outer' },
@@ -170,13 +162,9 @@ export default function Home() {
       ),
     ),
 
-    // ===== GUÍA + RESEÑAS =====
+    // ===== RECURSOS =====
     React.createElement('section', { className: 'gr-outer', id: 'recursos' },
-      React.createElement('div', { className: 'gr-grid' },
-        React.createElement(GuideCard, null),
-        React.createElement(ReviewCard, null),
-      ),
-      React.createElement('div', { className: 'wrap', style: { padding: 0, display: 'flex', gap: 28, flexWrap: 'wrap', marginTop: 28 } },
+      React.createElement('div', { className: 'wrap', style: { padding: 0, display: 'flex', gap: 28, flexWrap: 'wrap' } },
         React.createElement(Link, { to: '/preguntas-frecuentes', className: 'link-underline' }, 'Preguntas frecuentes →'),
         React.createElement(Link, { to: '/foro', className: 'link-underline' }, 'Foro →'),
         React.createElement(Link, { to: '/blog', className: 'link-underline' }, 'Blog →'),
@@ -297,9 +285,11 @@ function HeroForm() {
           ),
           React.createElement('input', { type: 'email', placeholder: 'Correo electrónico*', value: email, onChange: (e) => setEmail(e.target.value), required: true }),
           React.createElement(PhoneField, { value: tel, onChange: setTel, country, onCountryChange: setCountry, placeholder: 'Teléfono*' }),
-          React.createElement('input', { type: 'text', placeholder: 'Producto que quieres importar', value: producto, onChange: (e) => setProducto(e.target.value) }),
-          React.createElement('input', { type: 'text', placeholder: 'Origen / ubicación de la mercancía (ej. Shanghái)', value: origen, onChange: (e) => setOrigen(e.target.value) }),
-          React.createElement('input', { type: 'text', placeholder: 'Aduana de destino (ej. Manzanillo, Nuevo Laredo)', value: aduanaDestino, onChange: (e) => setAduanaDestino(e.target.value) }),
+          React.createElement('input', { type: 'text', placeholder: 'Producto a importar', value: producto, onChange: (e) => setProducto(e.target.value) }),
+          React.createElement('div', { className: 'form-row' },
+            React.createElement('input', { type: 'text', placeholder: 'Origen (ej. Shanghái)', value: origen, onChange: (e) => setOrigen(e.target.value) }),
+            React.createElement('input', { type: 'text', placeholder: 'Aduana destino', value: aduanaDestino, onChange: (e) => setAduanaDestino(e.target.value) }),
+          ),
           React.createElement('select', {
             value: valorMercancia, onChange: (e) => setValorMercancia(e.target.value), required: true,
           },
@@ -312,41 +302,3 @@ function HeroForm() {
   );
 }
 
-function GuideCard() {
-  const [email, setEmail] = useState('');
-  const [sent, setSent] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-    window.open(whatsappLink(`Hola, quiero la Guía Maestra. Mi correo es: ${email}`), '_blank', 'noopener,noreferrer');
-    setSent(true);
-  };
-  return React.createElement('div', { className: 'card guide-card' },
-    React.createElement('div', { className: 'guide-head' },
-      React.createElement('div', { className: 'guide-badge' }, React.createElement('span', null, 'La Guía', React.createElement('br'), 'Maestra')),
-      React.createElement('div', null,
-        React.createElement('h3', null, '¿Vas a importar por primera vez?'),
-        React.createElement('p', null, 'Te regalamos nuestra guía: quién es quién en una operación, qué se paga y qué documentos necesitas. 45 páginas, en español de verdad.'),
-      ),
-    ),
-    sent
-      ? React.createElement('p', { style: { color: '#1F6B32', fontWeight: 600 } }, '¡Listo! Te escribimos por WhatsApp para enviártela.')
-      : React.createElement('form', { className: 'guide-form', onSubmit: handleSubmit },
-          React.createElement('input', { type: 'email', placeholder: 'Tu correo', value: email, onChange: (e) => setEmail(e.target.value), required: true }),
-          React.createElement('button', { type: 'submit', className: 'btn btn-primary' }, 'Enviármela'),
-        ),
-  );
-}
-
-function ReviewCard() {
-  const { count, quote, author } = SITE.review;
-  return React.createElement('div', { className: 'card' },
-    React.createElement('div', { className: 'review-head' },
-      React.createElement('div', { className: 'stars' }, [0, 1, 2, 3, 4].map((i) => React.createElement(IconStar, { key: i }))),
-      React.createElement('span', { className: 'review-count' }, count || React.createElement('span', { className: 'fill-me' }, 'X'), ' reseñas en Google'),
-    ),
-    React.createElement('p', { className: 'review-quote' }, quote || React.createElement('span', { className: 'fill-me' }, 'Reseña real de un cliente — qué necesitaba, qué resolvimos y cómo se sintió el acompañamiento.')),
-    React.createElement('div', { className: 'review-author' }, author || React.createElement('span', { className: 'fill-me' }, 'Nombre del cliente · Empresa')),
-    React.createElement('div', { className: 'review-link' }, 'Ver todas en Google →'),
-  );
-}

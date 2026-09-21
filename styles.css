@@ -162,7 +162,14 @@ input, textarea {
 .hero-copy p { color: var(--text-on-dark); font-size: 18px; line-height: 1.62; max-width: 520px; margin-bottom: 36px; }
 .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 .hero-form { flex: 0 0 400px; max-width: 100%; }
-.hero-form-card { background: var(--white); }
+.hero-form-card.hero-form-card { background: var(--white); padding: 20px; }
+.hero-form-card .form-fields { gap: 7px; }
+.hero-form-card .form-row { gap: 7px; }
+.hero-form-card .form-fields input,
+.hero-form-card .form-fields select,
+.hero-form-card .phone-select-trigger { padding: 8px 11px; font-size: 13px; }
+.hero-form-card .form-fields textarea { min-height: 40px; padding: 8px 11px; font-size: 13px; }
+.hero-form-card .form-submit { padding: 10px; font-size: 14px; margin-top: 1px; }
 .hero-deco { position: absolute; top: 0; right: 0; width: 55%; height: 100%; pointer-events: none; z-index: 0; }
 .hero .wrap { position: relative; z-index: 1; }
 
@@ -416,19 +423,26 @@ input, textarea {
 /* ===== BLOG ===== */
 .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .blog-card {
-  display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--grey-line);
-  padding: 28px; color: inherit; background: var(--white);
+  display: flex; flex-direction: column; border: 1px solid var(--grey-line);
+  color: inherit; background: var(--white); overflow: hidden;
 }
 .blog-card:hover { border-color: var(--green); color: inherit; }
 .blog-card:hover .blog-cover { background: var(--green-tint); }
 .blog-card h3 { font-size: 19px; font-weight: 600; line-height: 1.3; }
 .blog-card p { color: var(--text-body); font-size: 14.5px; line-height: 1.6; flex: 1; }
 
+.blog-card-photo {
+  position: relative; height: 150px; background-size: cover; background-position: center;
+  background-color: var(--grey-bg);
+}
+.blog-card-body { display: flex; flex-direction: column; gap: 10px; padding: 30px 22px 22px; }
+
 .blog-cover {
   display: flex; align-items: center; justify-content: center;
-  width: 52px; height: 52px; background: var(--grey-bg); border: 1px solid var(--grey-line);
+  width: 44px; height: 44px; background: var(--white); border: 1px solid var(--grey-line);
+  position: absolute; left: 16px; bottom: -18px;
 }
-.blog-cover-lg { width: 60px; height: 60px; margin-top: 24px; background: var(--green-tint); border: none; }
+.blog-cover-lg { width: 60px; height: 60px; background: var(--white); border: none; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
 
 .blog-article { max-width: 760px; display: flex; flex-direction: column; gap: 22px; }
 .blog-p { color: #333B39; font-size: 17px; line-height: 1.75; }
@@ -464,6 +478,31 @@ input, textarea {
 .callout { margin-top: 30px; background: var(--green-tint); border-left: 4px solid var(--green); padding: 22px 26px; text-align: left; }
 .callout .title { font-weight: 600; margin-bottom: 6px; }
 .callout p { color: #2B3331; font-size: 15.5px; line-height: 1.6; }
+
+/* ===== PHOTO BANNER ===== */
+.photo-banner {
+  position: relative; background-size: cover; background-position: center;
+  padding: 90px 60px; display: flex; align-items: center; justify-content: center;
+}
+.photo-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,38,55,0.72), rgba(13,38,55,0.55));
+}
+.photo-banner-inner { position: relative; z-index: 1; max-width: 720px; text-align: center; }
+.photo-banner-inner h2 { color: var(--white); font-size: 34px; font-weight: 600; margin-bottom: 14px; }
+.photo-banner-inner p { color: var(--text-on-dark); font-size: 17px; line-height: 1.6; }
+.page-banner {
+  position: relative; background-size: cover; background-position: center;
+  padding: 100px 60px 56px;
+}
+.page-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,38,55,0.82), rgba(13,38,55,0.68));
+}
+.page-banner .wrap { position: relative; z-index: 1; }
+.page-banner .eyebrow { color: var(--green); }
+.page-banner .page-title { color: var(--white); }
+.page-banner p { color: var(--text-on-dark); }
 
 /* ===== SHIP: placeholder marker ===== */
 .fill-me {

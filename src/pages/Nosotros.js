@@ -32,10 +32,18 @@ const PILLARS = [
 export default function Nosotros() {
   return React.createElement(React.Fragment, null,
 
-    React.createElement('section', { className: 'section', style: { paddingTop: 92, paddingBottom: 60 } },
+    React.createElement('section', {
+      className: 'page-banner',
+      style: { backgroundImage: "url('./assets/photos/banner-cranes-sunset.jpg')" },
+    },
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', { className: 'eyebrow' }, 'Nosotros'),
         React.createElement('h1', { className: 'page-title' }, '¿Quiénes somos?'),
+      ),
+    ),
+
+    React.createElement('section', { className: 'section', style: { paddingTop: 60, paddingBottom: 60 } },
+      React.createElement('div', { className: 'wrap' },
         React.createElement('div', { style: { display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 760 } },
           STORY_PARAGRAPHS.map((p, i) => React.createElement('p', {
             key: i,
