@@ -45,7 +45,7 @@ export default function BlogPost({ slug }) {
       ),
     ),
 
-    React.createElement('section', { className: 'px-60', style: { paddingBottom: 92 } },
+    React.createElement('section', { className: 'px-60', style: { paddingTop: 64, paddingBottom: 92 } },
       React.createElement('div', { className: 'wrap blog-article', style: { padding: 0 } },
         post.body.map(Block),
       ),

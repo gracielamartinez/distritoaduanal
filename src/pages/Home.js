@@ -290,6 +290,10 @@ function HeroForm() {
         'Aduana destino': aduanaDestino || '—',
         'Valor aproximado': valorMercancia || '—',
         'Mensaje': mensaje || '—',
+        // FormSubmit pone su propia hora al pie del correo, siempre en UTC.
+        'Fecha y hora': new Date().toLocaleString('es-MX', {
+          timeZone: 'America/Merida', dateStyle: 'full', timeStyle: 'short',
+        }) + ' (hora de Mérida)',
       });
       setStatus('sent');
     } catch (err) {

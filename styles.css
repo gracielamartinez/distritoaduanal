@@ -442,7 +442,7 @@ input, textarea {
   width: 44px; height: 44px; background: var(--white); border: 1px solid var(--grey-line);
   position: absolute; left: 16px; bottom: -18px;
 }
-.blog-cover-lg { width: 60px; height: 60px; background: var(--white); border: none; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+.blog-cover-lg { position: static; margin-top: 28px; width: 60px; height: 60px; background: var(--white); border: none; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
 
 .blog-article { max-width: 760px; display: flex; flex-direction: column; gap: 22px; }
 .blog-p { color: #333B39; font-size: 17px; line-height: 1.75; }
