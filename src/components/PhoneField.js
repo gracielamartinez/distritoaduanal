@@ -4,7 +4,7 @@ import { COUNTRIES, flagEmoji } from '../data/countries.js';
 // Campo de teléfono con selector de código de país (bandera + código de
 // marcación). `value`/`onChange` controlan solo el número; el país
 // seleccionado se expone hacia afuera vía `onCountryChange`.
-export default function PhoneField({ value, onChange, country, onCountryChange, placeholder = 'Tu número' }) {
+export default function PhoneField({ value, onChange, country, onCountryChange, placeholder = 'Tu número', required = false }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const wrapRef = useRef(null);
@@ -56,6 +56,7 @@ export default function PhoneField({ value, onChange, country, onCountryChange, 
     React.createElement('input', {
       type: 'tel',
       placeholder,
+      required,
       value,
       onChange: (e) => onChange(e.target.value),
     }),

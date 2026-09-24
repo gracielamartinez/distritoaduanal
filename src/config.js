@@ -24,6 +24,33 @@ export const SITE = {
   },
 };
 
+// Correos que reciben las respuestas del formulario de cotización del inicio.
+// El envío lo hace FormSubmit (formsubmit.co): el primer correo de la lista es
+// el destinatario principal y los demás van en copia. La primera vez que se
+// envíe el formulario, FormSubmit manda un correo de activación al destinatario
+// principal; hay que abrirlo y confirmar para que empiecen a llegar.
+export const FORM_RECIPIENTS = ['gmartinez@distritoaduanal.com', 'soluciones@distritoaduanal.com'];
+
+export async function sendFormByEmail(subject, fields) {
+  const [to, ...cc] = FORM_RECIPIENTS;
+  const res = await fetch(`https://formsubmit.co/ajax/${to}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      ...fields,
+      _subject: subject,
+      _cc: cc.join(','),
+      _replyto: fields['Correo'] || '',
+      _template: 'table',
+      _captcha: 'false',
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || String(data.success) !== 'true') {
+    throw new Error(data.message || `Error ${res.status}`);
+  }
+}
+
 export const whatsappLink = (message) =>
   `https://wa.me/${SITE.whatsappNumber}${message ? `?text=${encodeURIComponent(message)}` : ''}`;
 

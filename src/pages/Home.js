@@ -6,7 +6,7 @@ import {
 import QuoteForm from '../components/QuoteForm.js';
 import PhoneField from '../components/PhoneField.js';
 import { COUNTRIES } from '../data/countries.js';
-import { whatsappLink, SITE } from '../config.js';
+import { whatsappLink, sendFormByEmail, SITE } from '../config.js';
 
 const AUDIENCE_TEXT = 'Acompañamos a personas físicas, emprendedores, pequeñas y grandes empresas en cada paso de su camino. Sabemos lo importante que es que tus productos lleguen seguros y a tiempo. Nos encargamos de agilizar toda tu logística, sin importar el volumen o el origen de tus cargas. Te acompañamos en cada etapa con una asesoría a tu medida y un equipo experto dedicado a cuidar de tu negocio.';
 
@@ -242,13 +242,34 @@ function HeroForm() {
   const [aduanaDestino, setAduanaDestino] = useState('');
   const [valorMercancia, setValorMercancia] = useState('');
   const [mensaje, setMensaje] = useState('');
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const telFull = `${country[1]} ${tel}`;
+  const whatsappMessage = () => [
+    `Hola, soy ${nombre} ${apellido}.`,
+    'Quiero solicitar información.',
+    producto ? `Producto: ${producto}` : null,
+    origen ? `Origen / ubicación de la mercancía: ${origen}` : null,
+    aduanaDestino ? `Aduana de destino: ${aduanaDestino}` : null,
+    valorMercancia ? `Valor aproximado: ${valorMercancia}` : null,
+    mensaje ? mensaje : null,
+    `Correo: ${email}`,
+    `Teléfono: ${telFull}`,
+  ].filter(Boolean).join('\n');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!nombre.trim() || !apellido.trim() || !email.trim() || !tel.trim()) return;
-    const telFull = `${country[1]} ${tel}`;
+    if (status === 'sending') return;
+    if (!nombre.trim() || !apellido.trim() || !email.trim() || !tel.trim()) {
+      setError('Completa los campos marcados con *.');
+      setStatus('error');
+      return;
+    }
+    setStatus('sending');
+    setError('');
 
+    // Copia de respaldo en Netlify Forms (panel de Netlify > Forms).
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -259,24 +280,33 @@ function HeroForm() {
       }),
     }).catch(() => {});
 
-    const lines = [
-      `Hola, soy ${nombre} ${apellido}.`,
-      'Quiero solicitar información.',
-      producto ? `Producto: ${producto}` : null,
-      origen ? `Origen / ubicación de la mercancía: ${origen}` : null,
-      aduanaDestino ? `Aduana de destino: ${aduanaDestino}` : null,
-      valorMercancia ? `Valor aproximado: ${valorMercancia}` : null,
-      mensaje ? mensaje : null,
-      `Correo: ${email}`,
-      `Teléfono: ${telFull}`,
-    ].filter(Boolean);
-    window.open(whatsappLink(lines.join('\n')), '_blank', 'noopener,noreferrer');
-    setSent(true);
+    try {
+      await sendFormByEmail(`Nueva solicitud de información — ${nombre} ${apellido}`, {
+        'Nombre': `${nombre} ${apellido}`,
+        'Correo': email,
+        'Teléfono': telFull,
+        'Producto a importar': producto || '—',
+        'Origen': origen || '—',
+        'Aduana destino': aduanaDestino || '—',
+        'Valor aproximado': valorMercancia || '—',
+        'Mensaje': mensaje || '—',
+      });
+      setStatus('sent');
+    } catch (err) {
+      setError('No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp.');
+      setStatus('error');
+    }
   };
 
   return React.createElement('div', { className: 'op-form hero-form-card' },
-    sent
-      ? React.createElement('p', { style: { color: '#1F6B32', fontWeight: 600 } }, '¡Gracias! Se abrió WhatsApp con tu mensaje listo para enviar.')
+    status === 'sent'
+      ? React.createElement('div', null,
+          React.createElement('p', { style: { color: '#1F6B32', fontWeight: 600 } }, '¡Gracias! Recibimos tu solicitud y te contactaremos muy pronto.'),
+          React.createElement('a', {
+            className: 'link-underline', href: whatsappLink(whatsappMessage()),
+            target: '_blank', rel: 'noopener noreferrer', style: { display: 'inline-block', marginTop: 10 },
+          }, '¿Lo necesitas ya? Escríbenos por WhatsApp →'),
+        )
       : React.createElement('form', { className: 'form-fields', onSubmit: handleSubmit, name: 'cotizacion-hero', 'data-netlify': 'true' },
           React.createElement('input', { type: 'hidden', name: 'form-name', value: 'cotizacion-hero' }),
           React.createElement('div', { className: 'form-row' },
@@ -284,7 +314,7 @@ function HeroForm() {
             React.createElement('input', { type: 'text', placeholder: 'Apellido*', value: apellido, onChange: (e) => setApellido(e.target.value), required: true }),
           ),
           React.createElement('input', { type: 'email', placeholder: 'Correo electrónico*', value: email, onChange: (e) => setEmail(e.target.value), required: true }),
-          React.createElement(PhoneField, { value: tel, onChange: setTel, country, onCountryChange: setCountry, placeholder: 'Teléfono*' }),
+          React.createElement(PhoneField, { value: tel, onChange: setTel, country, onCountryChange: setCountry, placeholder: 'Teléfono*', required: true }),
           React.createElement('input', { type: 'text', placeholder: 'Producto a importar', value: producto, onChange: (e) => setProducto(e.target.value) }),
           React.createElement('div', { className: 'form-row' },
             React.createElement('input', { type: 'text', placeholder: 'Origen (ej. Shanghái)', value: origen, onChange: (e) => setOrigen(e.target.value) }),
@@ -297,7 +327,12 @@ function HeroForm() {
             VALOR_OPTIONS.map((v) => React.createElement('option', { key: v, value: v }, v)),
           ),
           React.createElement('textarea', { placeholder: 'Cuéntanos más sobre tu carga o proyecto', value: mensaje, onChange: (e) => setMensaje(e.target.value) }),
-          React.createElement('button', { type: 'submit', className: 'form-submit' }, 'Solicitar información'),
+          status === 'error' && React.createElement('p', { role: 'alert', style: { color: '#B3261E', fontSize: 13, margin: 0 } },
+            error, ' ',
+            React.createElement('a', { href: whatsappLink(whatsappMessage()), target: '_blank', rel: 'noopener noreferrer', style: { textDecoration: 'underline' } }, 'Abrir WhatsApp'),
+          ),
+          React.createElement('button', { type: 'submit', className: 'form-submit', disabled: status === 'sending' },
+            status === 'sending' ? 'Enviando…' : 'Solicitar información'),
         ),
   );
 }
