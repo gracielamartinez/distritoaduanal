@@ -184,7 +184,7 @@ export const FAQ_CATEGORIES = [
 // Reemplaza FAQ_CATEGORIES con lo que venga de content/faq.json.
 export async function hydrateFaq() {
   try {
-    const res = await fetch('./content/faq.json', { cache: 'no-store' });
+    const res = await fetch('/content/faq.json');
     if (!res.ok) return;
     const data = await res.json();
     if (Array.isArray(data.categories) && data.categories.length) {

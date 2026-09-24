@@ -11,6 +11,9 @@ const STORY_PARAGRAPHS = [
   `En ${SITE.name} no solo nos encargamos de que tus operaciones fluyan; cuidamos tu esfuerzo como si fuera el nuestro.`,
 ];
 
+// También se muestra en la página de inicio.
+export const VALUE_PROPOSITION = 'Ofrecer un acompañamiento integral en operaciones de comercio interior y exterior, proponer soluciones estratégicas con enfoque en la prevención de riesgos y la eficiencia operativa, garantizando procesos transparentes, honestos y confiables para obtener resultados que satisfagan las necesidades de los clientes.';
+
 const PILLARS = [
   {
     title: 'Misión',
@@ -25,7 +28,7 @@ const PILLARS = [
   {
     title: 'Propuesta de valor',
     Icon: IconGem,
-    text: 'Ofrecer un acompañamiento integral en operaciones de comercio interior y exterior, proponer soluciones estratégicas con enfoque en la prevención de riesgos y la eficiencia operativa, garantizando procesos transparentes, honestos y confiables para obtener resultados que satisfagan las necesidades de los clientes.',
+    text: VALUE_PROPOSITION,
   },
 ];
 
@@ -34,7 +37,7 @@ export default function Nosotros() {
 
     React.createElement('section', {
       className: 'page-banner',
-      style: { backgroundImage: "url('./assets/photos/banner-cranes-sunset.jpg')" },
+      style: { backgroundImage: "url('/assets/photos/banner-cranes-sunset.webp')" },
     },
       React.createElement('div', { className: 'wrap' },
         React.createElement('div', { className: 'eyebrow' }, 'Nosotros'),

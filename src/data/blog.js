@@ -535,7 +535,7 @@ export const BLOG_POSTS = [
 // Reemplaza BLOG_POSTS con lo que venga de content/blog.json.
 export async function hydrateBlog() {
   try {
-    const res = await fetch('./content/blog.json', { cache: 'no-store' });
+    const res = await fetch('/content/blog.json');
     if (!res.ok) return;
     const data = await res.json();
     if (Array.isArray(data.posts) && data.posts.length) {

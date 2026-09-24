@@ -53,7 +53,7 @@ const TRENDING = [
 // Reemplaza TRENDING con lo que venga de content/foro.json.
 export async function hydrateForo() {
   try {
-    const res = await fetch('./content/foro.json', { cache: 'no-store' });
+    const res = await fetch('/content/foro.json');
     if (!res.ok) return;
     const data = await res.json();
     if (Array.isArray(data.trending) && data.trending.length) {

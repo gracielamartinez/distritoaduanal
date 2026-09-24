@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRoute, matchRoute } from './router.js';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
@@ -10,6 +10,7 @@ import Foro from './pages/Foro.js';
 import Blog from './pages/Blog.js';
 import BlogPost from './pages/BlogPost.js';
 import Nosotros from './pages/Nosotros.js';
+import { applyMeta } from './seo.js';
 
 const PAGES = {
   '/': Home,
@@ -29,6 +30,7 @@ function resolvePage(route) {
 
 export default function App() {
   const route = useRoute();
+  useEffect(() => { applyMeta(route); }, [route]);
 
   return React.createElement(React.Fragment, null,
     React.createElement(Header, { route }),

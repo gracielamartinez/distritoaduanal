@@ -1,0 +1,28 @@
+{
+  "pages": {
+    "/": {
+      "title": "Distrito Aduanal | Comercializadora aduanal y logística en México",
+      "description": "Importa y exporta sin complicaciones. Comercializadora aduanal, despacho de importación y exportación, clasificación arancelaria, cálculo de impuestos y logística de comercio exterior en México."
+    },
+    "/servicios": {
+      "title": "Servicios de despacho aduanal y comercio exterior | Distrito Aduanal",
+      "description": "Despacho aduanal, comercializadora para importar sin padrón, clasificación arancelaria, logística internacional y asesoría en comercio exterior, explicados sin tecnicismos."
+    },
+    "/preguntas-frecuentes": {
+      "title": "Preguntas frecuentes sobre importar a México | Distrito Aduanal",
+      "description": "Respuestas directas sobre costos, tiempos, documentos, permisos e impuestos antes, durante y después de una importación o exportación en México."
+    },
+    "/foro": {
+      "title": "Foro de comercio exterior: dudas de importación | Distrito Aduanal",
+      "description": "Las preguntas más comentadas sobre importar y exportar en México, respondidas por nuestro equipo. Envía la tuya y te respondemos."
+    },
+    "/blog": {
+      "title": "Blog de comercio exterior: guías para importar | Distrito Aduanal",
+      "description": "Guías prácticas sobre pedimentos, Incoterms, impuestos de importación, padrón de importadores y más, explicadas en palabras claras."
+    },
+    "/nosotros": {
+      "title": "Quiénes somos | Distrito Aduanal",
+      "description": "Un equipo de comercio exterior que trabaja contigo como parte de tu negocio: te explicamos cada paso y te decimos qué va a costar antes de que decidas."
+    }
+  }
+}

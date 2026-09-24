@@ -1,2 +1,14 @@
 [build]
-  publish = "."
+  # Genera una página por sección y por artículo (con su título y descripción),
+  # sitemap.xml y robots.txt. Ver scripts/build.py.
+  command = "python3 scripts/build.py"
+  publish = "dist"
+
+# Fotos y logos: el navegador los guarda 7 días en vez de volver a pedirlos en
+# cada visita. Si reemplazas una foto conservando el mismo nombre, los
+# visitantes que ya la tenían pueden tardar hasta 7 días en ver la nueva;
+# para un cambio inmediato, súbela con otro nombre.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

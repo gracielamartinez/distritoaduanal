@@ -58,7 +58,7 @@ export const whatsappLink = (message) =>
 // conservando los valores por defecto para cualquier campo que falte.
 export async function hydrateSite() {
   try {
-    const res = await fetch('./content/site.json', { cache: 'no-store' });
+    const res = await fetch('/content/site.json');
     if (!res.ok) return;
     const data = await res.json();
     Object.assign(SITE, data, {

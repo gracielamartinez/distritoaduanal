@@ -12,20 +12,15 @@ preguntas frecuentes) se puede editar sin tocar código desde un panel en
 
 ## Cómo verlo en tu computadora
 
-Cualquier servidor de archivos estáticos sirve. Dos opciones sin instalar nada
-(macOS trae Ruby preinstalado):
+Primero se genera la carpeta `dist/` (una página por sección y por artículo
+del blog, igual que en Netlify) y luego se sirve:
 
 ```bash
-ruby -run -e httpd . -p 8420
+python3 scripts/build.py && python3 -m http.server 8420 -d dist
 ```
 
-Y abre http://localhost:8420 en el navegador.
-
-Si tienes Python 3 con las herramientas de línea de comandos completas:
-
-```bash
-python3 -m http.server 8420
-```
+Y abre http://localhost:8420 en el navegador. Si cambias algo, vuelve a
+correr el primer comando.
 
 No abras `index.html` directamente con doble clic (`file://`) — los módulos
 ES y el mapa de importaciones necesitan que el sitio se sirva por `http://`.
@@ -37,7 +32,8 @@ en local siempre muestra la pantalla de login sin poder entrar.
 ```
 index.html          # Punto de entrada, carga React desde CDN vía importmap
 styles.css           # Todo el CSS del sitio (colores, tipografía, layout responsivo)
-netlify.toml         # Le dice a Netlify que publique la raíz del repo, sin build
+netlify.toml         # Le dice a Netlify que corra scripts/build.py y publique dist/
+scripts/build.py     # Genera dist/: una página por URL con su título y descripción, sitemap.xml y robots.txt
 admin/
 ├── index.html        # Carga el editor Decap CMS (sin instalar nada)
 └── config.yml         # Define qué campos son editables desde /admin
@@ -51,7 +47,8 @@ assets/
 src/
 ├── config.js         # Valores por defecto de contacto (respaldo si content/site.json no carga)
 ├── icons.js           # Íconos SVG reutilizables
-├── router.js          # Enrutador simple basado en # (funciona en cualquier hosting estático)
+├── router.js          # Enrutador con URLs reales (/blog/mi-articulo/), sin dependencias
+├── seo.js             # Actualiza título y descripción al navegar (datos en content/pages.json)
 ├── App.js             # Layout general (header + página + footer) y mapa de rutas
 ├── main.js            # Carga content/*.json y luego monta la app en el DOM
 ├── data/
@@ -121,7 +118,7 @@ Netlify vuelve a publicar solo).
 2. En [app.netlify.com](https://app.netlify.com): **Add new site → Import an
    existing project → GitHub**, elegir el repositorio. Netlify detecta
    `netlify.toml` solo — no hace falta configurar build command ni publish
-   directory.
+   directory (el build solo usa Python, que ya viene en Netlify).
 3. En el sitio ya creado, ir a **Site configuration → Identity → Enable
    Identity**.
 4. En **Identity → Services**, activar **Git Gateway**.
@@ -129,13 +126,14 @@ Netlify vuelve a publicar solo).
    entrar a `/admin` (llega un correo para poner contraseña).
 6. Abrir `tudominio.netlify.app/admin`, iniciar sesión, y ya se puede editar.
 
-Sin depender de Node, también se puede subir tal cual a cualquier otro
-hosting de archivos estáticos (Vercel, GitHub Pages, hosting compartido por
-FTP) — pero el panel `/admin` solo funciona con el flujo de Netlify Identity +
-Git Gateway descrito arriba.
+Las URLs son reales (`/blog/mi-articulo/`, no `#/blog/mi-articulo`) para que
+Google indexe cada página por separado. Funcionan porque `scripts/build.py`
+crea un archivo por URL; en otro hosting habría que subir la carpeta `dist/`
+ya generada. Los enlaces viejos con `#/` se redirigen solos a la URL nueva.
 
-El enrutamiento usa `#/ruta` (hash) precisamente para que funcione en
-cualquiera de estas opciones sin configurar redirecciones especiales.
+Cuando se conecte el dominio distritoaduanal.com y se marque como dominio
+principal en Netlify, las URLs canónicas, el sitemap y robots.txt pasan a usarlo
+en la siguiente publicación, sin cambiar código.
 
 ## Si más adelante instalan Node.js
 

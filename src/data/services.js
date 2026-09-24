@@ -112,7 +112,7 @@ export const SERVICE_AREAS = [
 // Reemplaza SERVICE_AREAS con lo que venga de content/services.json.
 export async function hydrateServices() {
   try {
-    const res = await fetch('./content/services.json', { cache: 'no-store' });
+    const res = await fetch('/content/services.json');
     if (!res.ok) return;
     const data = await res.json();
     if (Array.isArray(data.areas) && data.areas.length) {

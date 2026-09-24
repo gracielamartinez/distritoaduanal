@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from '../router.js';
 import {
-  IconCustoms, IconTrade, IconLogistics, IconAdvice, IconShield,
+  IconCustoms, IconTrade, IconLogistics, IconAdvice, IconGem,
 } from '../icons.js';
+import { VALUE_PROPOSITION } from './Nosotros.js';
 import QuoteForm from '../components/QuoteForm.js';
 import PhoneField from '../components/PhoneField.js';
 import { COUNTRIES } from '../data/countries.js';
@@ -140,7 +141,7 @@ export default function Home() {
     // ===== BANNER CON FOTO =====
     React.createElement('section', {
       className: 'photo-banner',
-      style: { backgroundImage: "url('./assets/photos/banner-containers.jpg')" },
+      style: { backgroundImage: "url('/assets/photos/banner-containers.webp')" },
     },
       React.createElement('div', { className: 'photo-banner-inner' },
         React.createElement('h2', null, 'Conectamos tu negocio con el mundo, aduana por aduana'),
@@ -151,13 +152,13 @@ export default function Home() {
     // ===== ¿CÓMO ES TU OPERACIÓN? =====
     React.createElement('div', { id: 'operacion' }, React.createElement(OperationBlock, null)),
 
-    // ===== SIN COSTOS SORPRESA =====
+    // ===== PROPUESTA DE VALOR =====
     React.createElement('section', { className: 'banner-outer' },
       React.createElement('div', { className: 'banner' },
-        React.createElement(IconShield, { size: 56, stroke: '#1F6B32', strokeWidth: 1.4 }),
+        React.createElement(IconGem, { size: 56, stroke: '#1F6B32', strokeWidth: 1.4 }),
         React.createElement('div', { className: 'banner-text' },
-          React.createElement('h2', null, 'Sin costos sorpresa'),
-          React.createElement('p', null, 'Sabes todo lo que va a costar antes de empezar. Si algo cambia, nos aseguramos de avisarte en el momento — no en la factura final.'),
+          React.createElement('h2', null, 'Nuestra propuesta de valor'),
+          React.createElement('p', null, VALUE_PROPOSITION),
         ),
       ),
     ),

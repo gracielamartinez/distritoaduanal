@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Link, navigate } from '../router.js';
+import { Link, navigate, currentPath } from '../router.js';
 import { IconMenu } from '../icons.js';
 import { SITE } from '../config.js';
 import SocialLinks from './SocialLinks.js';
 
 function Brand() {
   return React.createElement(Link, { to: '/', className: 'brand' },
-    React.createElement('img', { src: './assets/logo-dark.png', alt: SITE.name, className: 'brand-logo' }),
+    React.createElement('img', { src: '/assets/logo-dark.png', alt: SITE.name, className: 'brand-logo' }),
   );
 }
 
 function goToHomeSection(id) {
   return (e) => {
     e.preventDefault();
-    const isHome = (window.location.hash.replace(/^#/, '') || '/') === '/';
+    const isHome = currentPath() === '/';
     if (isHome) {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     } else {
@@ -34,9 +34,9 @@ export default function Header({ route }) {
     React.createElement(Link, { to: '/servicios', className: isServicios ? 'active' : '' }, 'Servicios'),
     React.createElement(Link, { to: '/foro', className: isForo ? 'active' : '' }, 'Foro'),
     React.createElement(Link, { to: '/preguntas-frecuentes', className: isFaq ? 'active' : '' }, 'Preguntas frecuentes'),
-    React.createElement('a', { href: '#recursos', onClick: goToHomeSection('recursos') }, 'Recursos'),
+    React.createElement('a', { href: '/#recursos', onClick: goToHomeSection('recursos') }, 'Recursos'),
     React.createElement(Link, { to: '/nosotros', className: isNosotros ? 'active' : '' }, 'Nosotros'),
-    React.createElement('a', { href: '#cotizar', className: 'btn btn-primary', onClick: goToHomeSection('cotizar') }, 'Cotizar'),
+    React.createElement('a', { href: '/#cotizar', className: 'btn btn-primary', onClick: goToHomeSection('cotizar') }, 'Cotizar'),
   );
 
   return React.createElement('header', null,

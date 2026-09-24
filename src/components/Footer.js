@@ -9,7 +9,7 @@ export default function Footer() {
       React.createElement('div', { className: 'footer-grid' },
         React.createElement('div', null,
           React.createElement('div', { className: 'footer-brand' },
-            React.createElement('img', { src: './assets/logo-dark.png', alt: SITE.name, className: 'brand-logo' }),
+            React.createElement('img', { src: '/assets/logo-dark.png', alt: SITE.name, className: 'brand-logo' }),
           ),
           React.createElement('p', { className: 'footer-tagline' }, SITE.tagline),
           React.createElement(SocialLinks, { size: 18, className: 'footer-social' }),
