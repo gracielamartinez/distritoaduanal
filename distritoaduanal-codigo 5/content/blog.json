@@ -1,0 +1,768 @@
+{
+  "posts": [
+    {
+      "slug": "como-leer-tu-pedimento",
+      "title": "Cómo leer un pedimento de importación: Guía paso a paso",
+      "excerpt": "El pedimento es la prueba legal de que tu mercancía entró o salió de México en regla. Te explicamos qué significa cada sección, sin tecnicismos.",
+      "body": [
+        {
+          "type": "p",
+          "text": "En Distrito Aduanal entendemos perfectamente lo que se siente: recibes tu primer pedimento de importación y parece que está escrito en otro idioma. Es completamente normal sentirse abrumado con un documento lleno de claves, siglas y casillas técnicas."
+        },
+        {
+          "type": "p",
+          "text": "Sabemos lo importante que es tu operación y por eso queremos apoyar tu camino desde el inicio y explicarte de forma sencilla qué significa cada sección. El pedimento es la prueba legal de que tu mercancía entró o salió de México en regla, y es el principal respaldo que te pedirá el SAT ante cualquier auditoría."
+        },
+        {
+          "type": "p",
+          "text": "Nosotros estamos aquí para guiarte y enseñarte exactamente dónde mirar."
+        },
+        {
+          "type": "h3",
+          "text": "1. La parte de arriba: La “tarjeta de presentación” del trámite"
+        },
+        {
+          "type": "p",
+          "text": "En el encabezado vas a encontrar los datos básicos de la operación. Lo primero que salta a la vista es el número de pedimento, que es un folio de 15 dígitos; básicamente, es la CURP de tu importación."
+        },
+        {
+          "type": "p",
+          "text": "Aquí también verás por qué aduana entró tu carga (por ejemplo, Manzanillo o el AICM), el tipo de cambio que se aplicó ese día y los datos fiscales tanto de tu empresa como del agente aduanal. Si ves la clave A1, significa que es una importación definitiva estándar."
+        },
+        {
+          "type": "h3",
+          "text": "2. El cuerpo del pedimento: El desglose de tu mercancía"
+        },
+        {
+          "type": "p",
+          "text": "A esta sección se le llama “partidas”. Piensa en cada partida como un renglón para cada producto distinto que trajiste. Si compraste tres cosas diferentes, verás tres partidas."
+        },
+        {
+          "type": "p",
+          "text": "Aquí es donde debes checar que la descripción de lo que compraste haga sentido y coincida con tu factura. También verás la fracción arancelaria (ese código numérico internacional que le dice a la autoridad qué es tu producto), la cantidad de piezas, el país de donde viene y el valor en aduana, que es sobre el cual se calculan los impuestos."
+        },
+        {
+          "type": "h3",
+          "text": "3. El costo: ¿Qué impuestos se pagaron exactamente?"
+        },
+        {
+          "type": "p",
+          "text": "Esta es la parte donde muchos se pierden, pero la realidad es muy simple. Aquí verás reflejado lo que se le pagó al fisco:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "El IGI, que es el arancel de tu producto.",
+            "El DTA, que es la cuota que cobra el gobierno por usar las instalaciones y servicios de la aduana.",
+            "El IVA correspondiente a la importación."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "4. El semáforo aduanal: ¿Por qué a veces se tarda más?"
+        },
+        {
+          "type": "p",
+          "text": "Cuando la mercancía está lista para salir de la aduana, pasa por un sistema aleatorio. Si sale verde, la carga se libera inmediatamente. Si sale rojo, significa que la autoridad hará una revisión física de las cajas y los documentos."
+        },
+        {
+          "type": "p",
+          "text": "Si a tu carga le toca verde o rojo, no te preocupes: un rojo no significa que hiciste algo mal. Es simplemente un filtro de rutina. Entendemos que cuando la carga se frena da un poco de nervios, pero mientras la autoridad revisa, nosotros estamos ahí mismo dándole seguimiento para liberar todo lo antes posible."
+        }
+      ]
+    },
+    {
+      "slug": "incoterms-explicados",
+      "title": "Incoterms explicados: Guía de EXW, FOB, CIF y DDP para importar a México",
+      "excerpt": "Entiende EXW, FOB, CIF y DDP con ejemplos prácticos y descubre cuál conviene más a tu negocio antes de cerrar una compra.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Si estás empezando a importar o negociar con proveedores extranjeros, es normal que te encuentres con términos como EXW, FOB, CIF o DDP. Sabemos que al principio parecen claves indescifrables; entenderlas es el primer paso para una operación segura y para optimizar costos."
+        },
+        {
+          "type": "p",
+          "text": "Un incoterm no es un tipo de flete ni un trámite complejo; es una regla internacional emitida por la Cámara de Comercio Internacional (ICC) que define tres cosas esenciales entre tu proveedor y tu empresa:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Quién asume cada tramo del transporte.",
+            "Quién contrata el seguro de la mercancía.",
+            "En qué punto exacto la responsabilidad de la carga pasa del vendedor a tus manos."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Entendemos que tomar la decisión correcta desde el origen evita sorpresas, retrasos en aduana y sobrecostos. Por eso, en Distrito Aduanal, como tu socio estratégico en comercio exterior, te explicamos los 4 Incoterms más utilizados con ejemplos prácticos:"
+        },
+        {
+          "type": "h3",
+          "text": "EXW (Ex Works / En fábrica)"
+        },
+        {
+          "type": "p",
+          "text": "El proveedor entrega en la puerta de su bodega; la logística internacional corre por tu cuenta."
+        },
+        {
+          "type": "p",
+          "text": "En este término, el vendedor solo fabrica, empaca y deja las cajas listas en su mostrador o bodega. A partir de ese momento, la responsabilidad operativa es tuya: mandar un camión a recogerlas, trasladarlas al puerto de salida, hacer la exportación y pagar el barco a México."
+        },
+        {
+          "type": "p",
+          "text": "Ejemplo: Le compras 100 sillas a una fábrica en China. El proveedor solo te dice: “aquí están tus cajas afuera de mi fábrica, tú te encargas de llevarlas”."
+        },
+        {
+          "type": "p",
+          "text": "En varios países, realizar la exportación siendo extranjero puede ser complicado. Como tu aliado logístico, te recomendamos consultar antes de aceptar este término para validar la viabilidad en el país de origen."
+        },
+        {
+          "type": "h3",
+          "text": "FOB (Free On Board / Libre a bordo), exclusivo para transporte marítimo"
+        },
+        {
+          "type": "p",
+          "text": "El proveedor coloca la carga sobre el barco en su país, y nosotros la traemos a México."
+        },
+        {
+          "type": "p",
+          "text": "Es el esquema más recomendado y utilizado en transporte marítimo. El proveedor paga el camión en su país, la aduana de salida y la maniobra para subir tus cajas al barco. Una vez que la mercancía está arriba del buque, la responsabilidad pasa a ti: asumes el flete del barco, el seguro y la importación al llegar a México."
+        },
+        {
+          "type": "p",
+          "text": "Ejemplo: Le compras ropa a un proveedor en Shanghái. Él mueve las cajas dentro de China, se encarga de la aduana de exportación y las sube al barco. En cuanto las cajas tocan la cubierta en Shanghái, la estafeta es tuya para coordinar el viaje en mar y el despacho eficiente en la aduana mexicana."
+        },
+        {
+          "type": "h3",
+          "text": "CIF (Cost, Insurance and Freight / Costo, seguro y flete)"
+        },
+        {
+          "type": "p",
+          "text": "El proveedor paga el transporte marítimo y un seguro básico, pero el riesgo en el trayecto sigue siendo tuyo."
+        },
+        {
+          "type": "p",
+          "text": "Es similar a FOB, con la diferencia de que el proveedor te cobra en la misma factura el costo del barco y una póliza de seguro hasta el puerto mexicano de destino (como Manzanillo o Veracruz)."
+        },
+        {
+          "type": "h3",
+          "text": "DDP (Delivered Duty Paid / Entregado con derechos pagados)"
+        },
+        {
+          "type": "p",
+          "text": "Entregado en tu bodega en México, con impuestos incluidos."
+        },
+        {
+          "type": "p",
+          "text": "A primera vista parece la opción más cómoda, ya que el proveedor te promete gestionar fletes, seguros y hasta el pago de impuestos en la aduana mexicana. Sin embargo, involucra un reto legal y fiscal que no debes ignorar."
+        },
+        {
+          "type": "p",
+          "text": "La parte fiscal y aduanera: para importar legalmente a México, hacer válida la compra y deducir impuestos ante el SAT, la ley exige contar con una empresa en el país, RFC y Padrón de Importadores activo. Como un proveedor extranjero no tiene estos registros, aplicar un DDP sin la estructura adecuada compromete la certeza jurídica de tu operación. Antes de aceptar un DDP, revisemos juntos la mejor alternativa operativa."
+        },
+        {
+          "type": "h3",
+          "text": "¿Cuál es la opción que más conviene a tu negocio?"
+        },
+        {
+          "type": "p",
+          "text": "Para envíos marítimos, en Distrito Aduanal sugerimos habitualmente negociar en FOB. Es el punto de equilibrio perfecto: tu proveedor gestiona lo que mejor conoce en su país y nosotros, como tu socio estratégico, nos encargamos de la liberación en la aduana mexicana."
+        },
+        {
+          "type": "p",
+          "text": "Si tu envío es por vía aérea o mediante contenedor completo terrestre, el término equivalente a FOB es FCA (Free Carrier)."
+        },
+        {
+          "type": "h3",
+          "text": "¿Tienes una cotización en mano o estás por cerrar un contrato comercial?"
+        },
+        {
+          "type": "p",
+          "text": "Consúltanos antes de realizar tu anticipo. En Distrito Aduanal analizamos tu caso para diseñar la estrategia logística y aduanera más segura, transparente y rentable para tu empresa."
+        }
+      ]
+    },
+    {
+      "slug": "documentos-para-tu-proveedor",
+      "title": "Requisitos para importar a México: Documentos que debes pedirle a tu proveedor",
+      "excerpt": "Los 5 documentos que debes pedirle a tu proveedor para que tu carga no se detenga en la aduana mexicana.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Si le preguntaras a diez importadores cuál ha sido su peor dolor de cabeza en la aduana, la mayoría no te dirá que fue un problema con la autoridad, sino un documento con la información incorrecta. Un error en una letra, un dato que no cuadra o un documento que llegó tres días tarde puede frenar tu carga por completo."
+        },
+        {
+          "type": "p",
+          "text": "La buena noticia es que esto se soluciona muy fácil si desde el día uno le dejas claro a tu proveedor qué necesitas. Para lograr un despacho eficiente al llegar a la aduana mexicana, aquí tienes los 5 documentos que sí o sí debes pedirle:"
+        },
+        {
+          "type": "h3",
+          "text": "Factura Comercial (Commercial Invoice)"
+        },
+        {
+          "type": "p",
+          "text": "Es el equivalente al ticket de compra, pero a nivel internacional. Aquí debe venir bien claro quién le compra a quién (con tu RFC y datos fiscales completos), el detalle de cada producto, cuántas piezas son, el precio unitario, el total, el tipo de moneda y el incoterm que pactaron."
+        },
+        {
+          "type": "p",
+          "text": "¿Por qué importa? Es la base con la que el SAT calcula exactamente cuánto vas a pagar de impuestos. Si tiene errores, el cálculo sale mal."
+        },
+        {
+          "type": "h3",
+          "text": "Lista de Empaque (Packing List)"
+        },
+        {
+          "type": "p",
+          "text": "Es como una radiografía del empaque. Le dice a la aduana cómo vienen distribuidas las cajas, qué es lo que trae cada bulto, cuánto pesa todo junto, cuánto pesa la pura mercancía y las medidas del paquete."
+        },
+        {
+          "type": "p",
+          "text": "¿Por qué importa? Si a la autoridad se le ocurre revisar físicamente tu carga, la lista de empaque les ayuda a cotejar caja por caja contra lo declarado."
+        },
+        {
+          "type": "h3",
+          "text": "Documento de Transporte"
+        },
+        {
+          "type": "p",
+          "text": "Es la constancia oficial de que tu carga ya está en camino. Si tu mercancía viene por barco se llama Bill of Lading (B/L); si viene por avión, se le conoce como Guía Aérea (Air Waybill)."
+        },
+        {
+          "type": "p",
+          "text": "¿Por qué importa? Es prácticamente el título de propiedad de tus cosas mientras están en tránsito, y sin él la aduana simplemente no te entrega nada."
+        },
+        {
+          "type": "h3",
+          "text": "Certificado de Origen"
+        },
+        {
+          "type": "p",
+          "text": "Es el “acta de nacimiento” de tus productos. Le demuestra a la autoridad en qué país se fabricó realmente lo que estás trayendo."
+        },
+        {
+          "type": "p",
+          "text": "¿Por qué importa? Si el producto se hizo en un país con el que México tiene tratado comercial, es la clave para pagar menos arancel o incluso que quede exento por completo."
+        },
+        {
+          "type": "h3",
+          "text": "Ficha Técnica"
+        },
+        {
+          "type": "p",
+          "text": "Es la descripción detallada de tu producto: de qué materiales está hecho, para qué sirve, fotos de cómo se ve y cómo funciona."
+        },
+        {
+          "type": "p",
+          "text": "¿Por qué importa? Con esta información podemos clasificar correctamente tu mercancía y avisarte a tiempo si vas a necesitar alguna NOM, un permiso especial de salud o algún trámite antes de que el embarque salga del puerto."
+        },
+        {
+          "type": "h3",
+          "text": "El mejor consejo: Pide borradores antes de que embarquen"
+        },
+        {
+          "type": "p",
+          "text": "En la aduana mexicana la documentación no puede ir a medias. Si el contenedor llega a puerto y falta la factura o el certificado de origen, todo se detiene hasta conseguir el papel correcto. ¿El problema? Cada día que tus cajas se quedan guardadas en el puerto esperando papeles, el almacenaje sigue corriendo y se vuelve carísimo."
+        },
+        {
+          "type": "p",
+          "text": "En Distrito Aduanal nos interesa que tu proceso sea eficiente y que tus costos sean los más bajos posibles. Por eso, la regla de oro que siempre le damos a nuestros clientes es: pídele a tu proveedor los borradores de todos estos documentos antes de que suba la carga al barco o al avión."
+        },
+        {
+          "type": "p",
+          "text": "Al revisarlos juntos con tiempo, protegemos tu seguridad operativa y nos aseguramos de que, cuando tu mercancía toque suelo mexicano, todo fluya rápido y sin contratiempos."
+        },
+        {
+          "type": "h3",
+          "text": "¿Tu proveedor no sabe cómo armar alguno?"
+        },
+        {
+          "type": "p",
+          "text": "No te preocupes. Si tu proveedor en el extranjero tiene dudas de cómo llenar estos formatos para la aduana mexicana, escríbenos. En Distrito Aduanal te apoyamos guiándolo para que el envío sea a la primera y sin errores."
+        }
+      ]
+    },
+    {
+      "slug": "importar-sin-pagar-iva",
+      "title": "¿Qué productos no pagan IVA al importar a México? Exenciones y reglas",
+      "excerpt": "Qué productos y esquemas pueden estar exentos de IVA al importar a México, y cómo cuidar la salud fiscal de tu negocio.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Si estás planeando una importación, seguro sabes que en México la regla general es que casi todo paga IVA más el arancel que le corresponda. Sin embargo, existen excepciones legales que pueden significar un ahorro considerable o un mejor flujo de efectivo para tu empresa."
+        },
+        {
+          "type": "p",
+          "text": "Para lograr un despacho eficiente, mantener tu certeza jurídica y fiscal y evitar sorpresas al calcular costos, te explicamos qué productos o esquemas pueden estar exentos de IVA o recibir un tratamiento preferencial:"
+        },
+        {
+          "type": "h3",
+          "text": "Productos con tasa 0% o exentos por ley"
+        },
+        {
+          "type": "p",
+          "text": "La Ley del IVA establece una regla muy sencilla: si un producto no paga IVA cuando se vende dentro de México, tampoco debe pagarlo al momento de importarse. Entre los casos más comunes destacan:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Alimentos sin procesar y medicinas de patente: productos de canasta básica o insumos médicos esenciales.",
+            "Libros, periódicos y revistas: materiales impresos destinados a la divulgación y la cultura.",
+            "Insumos y maquinaria agrícola: ciertos bienes destinados directamente al campo y a la producción primaria."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Detalle importante: no todos los alimentos entran en tasa 0% (las bebidas saborizadas o los productos con cierto grado de procesamiento sí pagan IVA). Por eso, siempre debemos analizar la fracción arancelaria específica de tu producto."
+        },
+        {
+          "type": "h3",
+          "text": "Envíos de bajo valor por paquetería"
+        },
+        {
+          "type": "p",
+          "text": "Las compras o paquetes pequeños que ingresan al país a través de empresas de mensajería (como DHL, FedEx o UPS) cuentan con esquemas simplificados que, bajo ciertos límites de valor, pueden quedar exentos o pagar tarifas preferenciales."
+        },
+        {
+          "type": "p",
+          "text": "A considerar: los montos máximos, porcentajes y exenciones dependen del país de origen de la mercancía y de las regulaciones vigentes. Antes de calcular tus costos, consúltanos para confirmar las regulaciones operativas actuales."
+        },
+        {
+          "type": "h3",
+          "text": "Importación temporal para exportar (programa IMMEX)"
+        },
+        {
+          "type": "p",
+          "text": "Si tu empresa trae materias primas, insumos, partes o maquinaria para transformarlas dentro de México y luego volver a exportar el producto terminado, el programa IMMEX es tu mejor aliado."
+        },
+        {
+          "type": "p",
+          "text": "Cómo funciona en la práctica: las importaciones temporales generan IVA, pero si cuentas con la Certificación de IVA e IEPS, el SAT te otorga un crédito fiscal por el 100% del impuesto. Esto significa que no realizas un desembolso real de efectivo."
+        },
+        {
+          "type": "p",
+          "text": "Este beneficio está diseñado exclusivamente para procesos de manufactura y exportación, no para comercializar o vender los productos dentro del mercado mexicano."
+        },
+        {
+          "type": "h3",
+          "text": "Cuidamos la salud fiscal de tu negocio"
+        },
+        {
+          "type": "p",
+          "text": "Fuera de estas excepciones, lo más recomendable para cuidar la seguridad operativa de tu empresa es contemplar el IVA dentro de tu cotización inicial. En Distrito Aduanal te entregamos números claros desde el principio para que conozcas el costo total de tu importación."
+        },
+        {
+          "type": "p",
+          "text": "Cuando realizas una importación definitiva con tu RFC y Padrón, el IVA que pagas en la aduana normalmente lo puedes acreditar en tus declaraciones de impuestos ante el SAT."
+        },
+        {
+          "type": "h3",
+          "text": "¿Tienes dudas sobre tu producto?"
+        },
+        {
+          "type": "p",
+          "text": "Si quieres saber si tu mercancía entra en tasa 0%, requiere exención o cómo acreditar correctamente tus impuestos, contáctanos. Auditamos tu caso para asegurar una operación legal, transparente y rentable."
+        }
+      ]
+    },
+    {
+      "slug": "almacenajes-y-demoras",
+      "title": "Evita almacenajes y demoras en aduana: Guía para no pagar de más en tu flete",
+      "excerpt": "Qué son los almacenajes y las demoras, quién los cobra y cinco pasos para evitar pagar de más en el puerto.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Si hay un concepto que puede arruinar el presupuesto de una importación, son los gastos no planificados en el puerto. Entre ellos, los almacenajes y las demoras son los sobrecostos más comunes, pero la buena noticia es que casi el 100% de ellos se pueden evitar si se gestionan a tiempo."
+        },
+        {
+          "type": "p",
+          "text": "Te explicamos de manera sencilla en qué consiste cada concepto y la estrategia para evitarlos:"
+        },
+        {
+          "type": "h3",
+          "text": "¿Cuál es la diferencia entre almacenaje y demora?"
+        },
+        {
+          "type": "p",
+          "text": "Aunque a menudo se confunden porque ambos son cobros por día de retraso, los cobran actores distintos y por razones diferentes:"
+        },
+        {
+          "type": "h3",
+          "text": "Almacenajes"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "¿Quién lo cobra? La terminal portuaria o el recinto fiscalizado dentro de la aduana.",
+            "¿Por qué te lo cobran? Por el uso de espacio al guardar tus cajas o contenedores mientras se completa el trámite de importación y la liberación aduanera.",
+            "¿Cómo funciona? La terminal te otorga un periodo de días libres (estos varían según el puerto). Si la mercancía no sale dentro de ese plazo, comienza a correr una tarifa diaria que suele incrementarse exponencialmente entre más días pasen."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Demoras"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "¿Quién lo cobra? La línea naviera.",
+            "¿Por qué te lo cobran? Por conservar el contenedor más tiempo del permitido.",
+            "¿Cómo funciona? La naviera te presta el contenedor y te da un número de días libres para vaciarlo y devolver el equipo vacío al patio asignado. Si te pasas del tiempo acordado, se aplica una cuota diaria por cada día de retraso."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Las tarifas de almacenajes y demoras las fija directamente cada recinto y naviera, y cambian de forma constante. Por eso, en Distrito Aduanal confirmamos siempre los días libres y las tarifas vigentes en la cotización de tu operación."
+        },
+        {
+          "type": "h3",
+          "text": "Checklist práctico: 5 pasos para prevenir almacenajes y demoras"
+        },
+        {
+          "type": "p",
+          "text": "Entre más rápido avance la documentación y la logística, menos días se acumulan. Aplicar estas recomendaciones protege la economía de tu empresa:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Documentación lista desde origen: no esperes a que tu mercancía llegue al puerto para revisar facturas o certificados.",
+            "Respuesta rápida a la autoridad: si la aduana solicita alguna aclaración o documento complementario, responde de inmediato para evitar que corran días en el recinto.",
+            "Coordinación del transporte terrestre: organiza con anticipación el camión que recogerá la carga para no agotar los días libres por falta de transporte.",
+            "Notificación de mercancías complejas: si tu producto requiere permisos especiales (NOMs, COFEPRIS, etc.), infórmanos desde el inicio para planear tiempos con el margen adecuado.",
+            "Negociación de días libres: si mueves un volumen constante de contenedores, gestionamos con la naviera días libres adicionales desde la reserva del espacio."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Tu tranquilidad es nuestra prioridad"
+        },
+        {
+          "type": "p",
+          "text": "Sabemos que la clave para evitar almacenajes y demoras radica en la anticipación y la comunicación constante."
+        },
+        {
+          "type": "p",
+          "text": "Por eso, coordinamos cada etapa del proceso con visibilidad en tiempo real para brindarte la certeza jurídica y fiscal que tu empresa necesita, garantizando que tu mercancía fluya hacia su destino sin frenos ni gastos innecesarios."
+        },
+        {
+          "type": "h3",
+          "text": "¿Tienes un embarque en puerta?"
+        },
+        {
+          "type": "p",
+          "text": "Contáctanos antes de que tu carga salga de origen. En Distrito Aduanal revisamos tu logística paso a paso para asegurar un despacho impecable a la primera."
+        }
+      ]
+    },
+    {
+      "slug": "productos-que-no-se-pueden-importar",
+      "title": "Lista de productos prohibidos y restringidos para importar a México",
+      "excerpt": "Las categorías de productos prohibidos o restringidos en México y qué necesita el tuyo para poder importarse.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Saber si tu mercancía puede entrar al país es una de las principales preocupaciones. Sin embargo, la inmensa mayoría de los bienes pueden ingresar sin problemas, siempre y cuando cumplan las reglas de la aduana mexicana."
+        },
+        {
+          "type": "p",
+          "text": "Lo que sí existe son categorías prohibidas o altamente restringidas que requieren trámites muy específicos antes de comprar."
+        },
+        {
+          "type": "p",
+          "text": "Para mantener tu seguridad operativa, lograr un despacho eficiente y garantizar la certeza jurídica y fiscal de tu empresa, aquí te explicamos cuáles son estos productos y cómo saber si el tuyo se puede importar:"
+        },
+        {
+          "type": "h3",
+          "text": "Las 7 categorías de productos prohibidos o restringidos"
+        },
+        {
+          "type": "p",
+          "text": "Estas mercancías no pueden ingresar a México de forma comercial convencional, salvo que cuenten con autorizaciones de dependencias federales específicas:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Armas de fuego, municiones y explosivos: requieren permiso previo expedido exclusivamente por la Secretaría de la Defensa Nacional (SEDENA).",
+            "Estupefacientes y precursores químicos: sustancias controladas sujetas a regulación estricta por parte de las autoridades de salud y seguridad.",
+            "Residuos peligrosos: materiales que representen un riesgo ambiental o biológico para el país.",
+            "Especies de flora y fauna protegidas: animales, plantas o sus derivados sin los certificados CITES o permisos correspondientes de SEMARNAT.",
+            "Productos pirata o falsificados: cualquier mercancía que viole marcas, patentes o derechos de propiedad intelectual registrados en México.",
+            "Medicamentos y suplementos: productos para la salud o consumo humano que no cuenten con registro sanitario o permiso de COFEPRIS.",
+            "Vehículos usados: autos que no se apeguen estrictamente al decreto de importación definitiva vigente."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Si no está prohibido: ¿Qué necesita tu producto?"
+        },
+        {
+          "type": "p",
+          "text": "Fuera de esta lista, la pregunta casi nunca es “¿se puede importar?”, sino “¿qué norma o regulación le aplica?”. La gran mayoría de los productos no están prohibidos; solo deben cumplir con requisitos como:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Normas Oficiales Mexicanas (NOMs): de etiquetado, seguridad o información comercial.",
+            "Permisos previos: emitidos por la Secretaría de Economía o de Salud.",
+            "Padrones sectoriales: registros específicos según el tipo de industria (textil, calzado, siderúrgico, etc.)."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Si tu producto no está en la lista de prohibidos, lo más probable es que sí se pueda importar a México si se hace con la estrategia correcta."
+        },
+        {
+          "type": "p",
+          "text": "Para cuidar la rentabilidad de tu negocio, la regla es clara: nunca compres mercancía en el extranjero sin validar sus requisitos de entrada a México."
+        }
+      ]
+    },
+    {
+      "slug": "importar-sin-padron-de-importadores",
+      "title": "¿Puedo importar aunque no tenga padrón de importadores?",
+      "excerpt": "Sí. No tener padrón no te deja fuera del comercio exterior: hay opciones legales, y te ayudamos a elegir la que más te conviene.",
+      "body": [
+        {
+          "type": "p",
+          "text": "El padrón de importadores es el registro ante el SAT que te permite importar mercancía a tu nombre. Sin él no puedes hacer una importación por tu cuenta, ya seas persona física o moral. Pero eso no significa que tengas que esperar a tramitarlo para empezar."
+        },
+        {
+          "type": "h3",
+          "text": "La opción más común: una comercializadora"
+        },
+        {
+          "type": "p",
+          "text": "Una comercializadora es una empresa que ya tiene padrón de importadores (y, cuando el producto lo requiere, padrones sectoriales) y hace la importación a su nombre. Después te vende la mercancía ya nacionalizada, con una factura mexicana que respalda la operación. Es completamente legal y muy común en el comercio exterior."
+        },
+        {
+          "type": "p",
+          "text": "Esto no es lo mismo que \"prestar un padrón\". En una comercializadora legítima, ella es realmente quien importa y después te vende; no se limita a prestar su registro para que otro opere sin control. Esa diferencia nos importa mucho, y así es como trabajamos."
+        },
+        {
+          "type": "h3",
+          "text": "¿Cuándo te conviene?"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Es tu primera importación y no quieres tramitar un padrón para una sola compra.",
+            "Ya compraste mercancía en el extranjero y no sabes cómo ingresarla legalmente.",
+            "Importas de forma esporádica, una o dos veces al año, y no te conviene mantener un registro permanente.",
+            "Tu producto requiere un padrón sectorial (por ejemplo, textil, calzado, siderúrgico o bebidas alcohólicas) que todavía no tienes."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "¿Y si prefieres tramitar tu propio padrón?"
+        },
+        {
+          "type": "p",
+          "text": "Si vas a importar con frecuencia, tener tu propio padrón puede convenirte más a largo plazo. Te ayudamos con el trámite y, mientras se resuelve, puedes seguir importando a través de la comercializadora para que tu operación no se detenga."
+        },
+        {
+          "type": "p",
+          "text": "Cuéntanos qué quieres importar y te decimos, sin compromiso, qué opción te conviene más."
+        }
+      ]
+    },
+    {
+      "slug": "como-se-calculan-los-impuestos-de-importacion",
+      "title": "¿Cómo se calculan los impuestos de importación en México?",
+      "excerpt": "IGI, DTA e IVA: tres siglas que definen cuánto vas a pagar. Te explicamos cómo se calcula cada una, con un ejemplo sencillo.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Cuando importas no pagas un solo impuesto, sino varios conceptos que se calculan en cadena. Por eso muchas cotizaciones parecen no cuadrar a primera vista. Si entiendes el orden, podrás leer cualquier cotización sin sorpresas, incluida la nuestra."
+        },
+        {
+          "type": "h3",
+          "text": "1. La base: el valor en aduana"
+        },
+        {
+          "type": "p",
+          "text": "Todo parte del valor en aduana de tu mercancía. Por lo general es el valor de la factura (lo que le pagaste al proveedor) más el flete internacional y el seguro hasta que la mercancía llega a México. Sobre esta cantidad se calculan los demás conceptos."
+        },
+        {
+          "type": "h3",
+          "text": "2. IGI: el arancel"
+        },
+        {
+          "type": "p",
+          "text": "El Impuesto General de Importación es un porcentaje que depende de la fracción arancelaria de tu producto (el código que lo clasifica) y de su país de origen. Puede ser 0% o bastante más alto. Aquí es donde el certificado de origen puede ahorrarte dinero: si tu producto califica bajo un tratado comercial, el arancel puede reducirse o eliminarse."
+        },
+        {
+          "type": "h3",
+          "text": "3. DTA: el derecho de trámite aduanero"
+        },
+        {
+          "type": "p",
+          "text": "Es lo que se paga por el trámite ante la aduana. En la mayoría de las importaciones definitivas equivale al 8 al millar (0.8%) del valor en aduana, aunque algunas operaciones pagan una cuota fija. A diferencia del arancel, casi no depende del tipo de producto."
+        },
+        {
+          "type": "h3",
+          "text": "4. IVA"
+        },
+        {
+          "type": "p",
+          "text": "El IVA, normalmente de 16%, se calcula al final y sobre la suma del valor en aduana, el IGI y el DTA, no solo sobre el valor de la mercancía. Por eso el IVA de una importación sale un poco más alto que si aplicaras 16% directo a la factura. No es un error; así funciona la fórmula. Si tienes actividad empresarial, este IVA normalmente lo puedes acreditar después."
+        },
+        {
+          "type": "h3",
+          "text": "Un ejemplo sencillo"
+        },
+        {
+          "type": "p",
+          "text": "Supongamos una mercancía con un valor en aduana de $100,000 pesos y un arancel de 10%:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "IGI (10%): $10,000",
+            "DTA (0.8%): $800",
+            "Base para el IVA: $100,000 + $10,000 + $800 = $110,800",
+            "IVA (16% de $110,800): $17,728",
+            "Total de impuestos: $28,528"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Algunos productos pagan además otros conceptos, como IEPS (por ejemplo, bebidas alcohólicas o tabaco) o cuotas compensatorias, y cada pedimento paga una pequeña cuota de prevalidación. Los porcentajes exactos dependen de tu producto; por eso los calculamos en tu cotización, para que sepas cuánto vas a pagar antes de decidir."
+        }
+      ]
+    },
+    {
+      "slug": "que-es-una-comercializadora-aduanal",
+      "title": "Qué es una comercializadora aduanal y cuándo la necesitas",
+      "excerpt": "No es lo mismo que un agente aduanal, y no es \"prestar un padrón\". Te explicamos qué es y en qué casos te conviene.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Es un término que se usa mucho y se explica poco. Una comercializadora aduanal es una empresa que tiene padrón de importadores (y, cuando aplica, los padrones sectoriales necesarios) y realiza la importación a su nombre. Después te vende la mercancía ya nacionalizada, con una factura mexicana que respalda toda la operación."
+        },
+        {
+          "type": "h3",
+          "text": "¿En qué se diferencia de un agente aduanal?"
+        },
+        {
+          "type": "p",
+          "text": "El agente aduanal es el profesional autorizado para tramitar el despacho ante la aduana: clasifica la mercancía, elabora el pedimento y lo presenta. La comercializadora, en cambio, es quien figura legalmente como importador. En la práctica trabajan juntos: la comercializadora importa a su nombre y un agente aduanal se encarga del trámite."
+        },
+        {
+          "type": "h3",
+          "text": "Por qué no es \"prestar un padrón\""
+        },
+        {
+          "type": "p",
+          "text": "Prestar un padrón, es decir, dejar que alguien use tu registro sin participar realmente en la operación, no está permitido y pone en riesgo a quien presta su nombre. Una comercializadora legítima funciona distinto: compra la mercancía, es su dueña durante la importación y después te la vende en una compraventa real, documentada con factura. Es una figura reconocida en el comercio exterior mexicano, y así es exactamente como trabajamos."
+        },
+        {
+          "type": "h3",
+          "text": "¿Cuándo te conviene usar una?"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "No tienes padrón de importadores, o tu producto requiere un padrón sectorial que no tienes.",
+            "Es una operación única o poco frecuente y no te conviene tramitar un registro permanente.",
+            "Quieres un solo contacto que se encargue de la parte legal, logística y fiscal de la importación.",
+            "Necesitas que la operación quede documentada y facturada para tu contabilidad."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Si ya importas de forma constante, puede convenirte más tener tu propio padrón. Te ayudamos a evaluar, sin compromiso, qué opción tiene más sentido para tu volumen."
+        }
+      ]
+    },
+    {
+      "slug": "importar-electronicos-suplementos-cosmeticos",
+      "title": "¿Puedo importar electrónicos, suplementos o cosméticos a México?",
+      "excerpt": "Sí se puede, pero cada categoría tiene sus propios permisos y normas. Te explicamos qué revisar antes de comprar.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Estas tres categorías son de las que más dudas generan, y con razón: no basta con pagar impuestos. Cada una tiene requisitos propios que deben cumplirse para que la mercancía pueda entrar y venderse en México."
+        },
+        {
+          "type": "h3",
+          "text": "Electrónicos"
+        },
+        {
+          "type": "p",
+          "text": "Los aparatos electrónicos suelen tener que cumplir Normas Oficiales Mexicanas (NOMs) de seguridad eléctrica y de etiquetado: información en español, especificaciones técnicas y datos del importador. Los equipos que transmiten señal, como los que tienen Bluetooth o Wi-Fi, necesitan además un certificado de homologación de telecomunicaciones."
+        },
+        {
+          "type": "h3",
+          "text": "Suplementos alimenticios"
+        },
+        {
+          "type": "p",
+          "text": "Dependiendo de sus ingredientes, un suplemento puede requerir aviso de funcionamiento o incluso registro sanitario ante COFEPRIS, y debe cumplir las normas de etiquetado sanitario, con información nutrimental y modo de uso en español. Dos productos que parecen iguales pueden tener requisitos muy distintos según su fórmula."
+        },
+        {
+          "type": "h3",
+          "text": "Cosméticos"
+        },
+        {
+          "type": "p",
+          "text": "Los cosméticos generalmente requieren aviso de funcionamiento ante COFEPRIS y cumplir con el etiquetado correspondiente: ingredientes, precauciones de uso y datos del responsable en México. La mayoría no necesita registro sanitario, pero sí hay que clasificar bien el producto: si promete efectos terapéuticos, puede dejar de considerarse cosmético y los requisitos cambian."
+        },
+        {
+          "type": "h3",
+          "text": "Lo que tienen en común"
+        },
+        {
+          "type": "p",
+          "text": "En los tres casos el punto de partida es el mismo: identificar la fracción arancelaria correcta, porque de ahí se desprende qué NOM, permiso o aviso aplica. No hay una respuesta única para \"electrónicos\" o \"cosméticos\"; todo depende del producto específico."
+        },
+        {
+          "type": "p",
+          "text": "Mándanos la ficha técnica o el enlace del producto y te decimos exactamente qué necesita, antes de que compres."
+        }
+      ]
+    },
+    {
+      "slug": "persona-fisica-vs-persona-moral-para-importar",
+      "title": "Persona física vs. persona moral: ¿cuál conviene para importar?",
+      "excerpt": "Las dos pueden importar legalmente. La diferencia está en el volumen de tu operación, la responsabilidad legal y hacia dónde quieres crecer.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Tanto una persona física con actividad empresarial como una persona moral (una empresa constituida) pueden inscribirse en el padrón de importadores e importar a su nombre. No hay una opción mejor para todos: depende de dónde está tu negocio hoy y hacia dónde quieres llevarlo."
+        },
+        {
+          "type": "h3",
+          "text": "Persona física"
+        },
+        {
+          "type": "p",
+          "text": "Es la forma más sencilla de empezar: usas tu propio RFC y no necesitas constituir una empresa. Tiene sentido si vas arrancando, si tus operaciones son de menor volumen o si quieres probar un negocio antes de formalizarlo más. La contraparte es que respondes con tu patrimonio personal por las obligaciones fiscales y legales de la operación."
+        },
+        {
+          "type": "h3",
+          "text": "Persona moral"
+        },
+        {
+          "type": "p",
+          "text": "Requiere constituir una empresa, con los costos y trámites que eso implica. A cambio, la responsabilidad se limita al patrimonio de la empresa y no al tuyo, y suele ofrecer más opciones de planeación fiscal conforme crece el volumen. Es lo más común en negocios que importan de forma recurrente o que planean crecer."
+        },
+        {
+          "type": "h3",
+          "text": "¿Qué considerar para decidir?"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Volumen y frecuencia: las operaciones ocasionales suelen empezar como persona física; una operación recurrente favorece a la persona moral.",
+            "Responsabilidad: si te preocupa exponer tu patrimonio personal, la persona moral te protege más.",
+            "Planeación fiscal: cada régimen tiene implicaciones distintas, y esto conviene revisarlo con tu contador, no solo desde el lado aduanal.",
+            "Crecimiento: si planeas crecer, empezar como persona moral puede ahorrarte un cambio de estructura más adelante."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Desde el punto de vista aduanal, las dos figuras funcionan igual de bien; lo que cambia es la conveniencia fiscal y legal para tu caso. Cuéntanos cómo es tu operación y te orientamos con gusto. Para la decisión fiscal final, te recomendamos confirmarla con tu contador."
+        }
+      ]
+    }
+  ]
+}

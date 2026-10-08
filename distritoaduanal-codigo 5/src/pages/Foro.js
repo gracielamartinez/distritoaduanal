@@ -1,0 +1,135 @@
+import React, { useState } from 'react';
+import { Link } from '../router.js';
+import { whatsappLink } from '../config.js';
+import { IconDocument, IconClock, IconFlagCheck, IconBuilding, IconAdvice, IconInvoice } from '../icons.js';
+
+const TAG_ICONS = {
+  'Antes de la operación': IconDocument,
+  'Durante la operación': IconClock,
+  'Después de la operación': IconFlagCheck,
+  'Sobre los productos': IconBuilding,
+  'Sobre nuestros servicios': IconAdvice,
+  'Facturación y costos': IconInvoice,
+};
+
+// Temas más comentados. Estos son los valores por defecto (respaldo si
+// content/foro.json no carga). Una vez editado desde /admin, el contenido
+// real vive en content/foro.json. El foro no publica hilos en vivo (el
+// sitio no tiene backend) — cada pregunta enviada llega directo al equipo
+// por WhatsApp.
+const TRENDING = [
+  {
+    tag: 'Antes de la operación',
+    q: '¿Necesito contratar seguro de carga? ¿No responde la naviera?',
+    a: 'Sí, sugerimos contratarlo. Las navieras tienen esquemas de responsabilidad muy limitados, y ante cualquier evento, el seguro cubre el valor real de tu inversión.',
+  },
+  {
+    tag: 'Durante la operación',
+    q: '¿Por qué me cobran almacenajes y demoras si el retraso no fue mi culpa?',
+    a: 'Las terminales y navieras aplican las tarifas cuando la mercancía pasa más días de lo permitido en el recinto, sin importar el motivo. Hacemos todo lo posible por evitarlos.',
+  },
+  {
+    tag: 'Después de la operación',
+    q: '¿Qué pasa si el SAT me revisa dentro de dos o tres años?',
+    a: 'Nada de qué preocuparse: tienes el expediente completo para respaldarte, y estaremos aquí para apoyarte con cualquier aclaración.',
+  },
+  {
+    tag: 'Sobre los productos',
+    q: '¿Por qué el pedimento no viene a mi nombre?',
+    a: 'Porque nosotros estamos dados de alta en el padrón de importadores, lo que nos permite hacer la importación a nuestro nombre y responsabilizarnos ante la autoridad durante todo el proceso.',
+  },
+  {
+    tag: 'Sobre nuestros servicios',
+    q: '¿Puedo importar aunque no tenga padrón de importadores?',
+    a: 'Sí, ofrecemos opciones para importar sin padrón o te ayudamos a activarlo si lo necesitas.',
+  },
+  {
+    tag: 'Facturación y costos',
+    q: '¿Puedo deducir mis facturas?',
+    a: 'Sí. Emitimos factura electrónica (CFDI) válida en México. Solo requerimos tus datos fiscales.',
+  },
+];
+
+// Reemplaza TRENDING con lo que venga de content/foro.json.
+export async function hydrateForo() {
+  try {
+    const res = await fetch('/content/foro.json');
+    if (!res.ok) return;
+    const data = await res.json();
+    if (Array.isArray(data.trending) && data.trending.length) {
+      TRENDING.length = 0;
+      TRENDING.push(...data.trending);
+    }
+  } catch (e) {
+    // Sin conexión o sin content/foro.json todavía: se mantienen los temas por defecto.
+  }
+}
+
+function ThreadCard({ tag, q, a }) {
+  const TagIcon = TAG_ICONS[tag] || IconDocument;
+  return React.createElement('div', { className: 'forum-thread' },
+    React.createElement('span', { className: 'forum-tag' },
+      React.createElement(TagIcon, { size: 13, stroke: '#1F6B32', strokeWidth: 2 }),
+      tag,
+    ),
+    React.createElement('h3', null, q),
+    React.createElement('p', null, a),
+  );
+}
+
+function AskForm() {
+  const [nombre, setNombre] = useState('');
+  const [pregunta, setPregunta] = useState('');
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!pregunta.trim()) return;
+    const lines = [
+      nombre.trim() ? `Hola, soy ${nombre.trim()}.` : 'Hola.',
+      'Tengo una pregunta para el foro:',
+      pregunta.trim(),
+    ];
+    window.open(whatsappLink(lines.join('\n')), '_blank', 'noopener,noreferrer');
+    setSent(true);
+  };
+
+  if (sent) {
+    return React.createElement('p', { style: { color: '#1F6B32', fontWeight: 600 } }, '¡Gracias! Se abrió WhatsApp con tu pregunta lista para enviar.');
+  }
+
+  return React.createElement('form', { className: 'form-fields', onSubmit: handleSubmit },
+    React.createElement('input', { type: 'text', placeholder: 'Tu nombre (opcional)', value: nombre, onChange: (e) => setNombre(e.target.value) }),
+    React.createElement('textarea', {
+      placeholder: 'Escribe tu pregunta…', value: pregunta,
+      onChange: (e) => setPregunta(e.target.value), required: true,
+    }),
+    React.createElement('button', { type: 'submit', className: 'form-submit' }, 'Enviar pregunta'),
+  );
+}
+
+// Sección Foro: se muestra dentro de la página del Blog (/blog).
+export default function ForoSection() {
+  return React.createElement('section', { id: 'foro', className: 'px-60', style: { paddingTop: 24, paddingBottom: 92 } },
+    React.createElement('div', { className: 'wrap', style: { padding: 0 } },
+      React.createElement('div', { style: { borderTop: '1px solid #E3E6E5', paddingTop: 64 } },
+        React.createElement('div', { className: 'eyebrow' }, 'Foro'),
+        React.createElement('h2', { style: { fontSize: 34, fontWeight: 600, margin: '14px 0 14px' } }, 'Dudas de nuestra comunidad de importadores'),
+        React.createElement('p', { style: { color: '#4A5250', fontSize: 17, lineHeight: 1.65, maxWidth: 720, marginBottom: 36 } },
+          'Explora los temas más comentados o manda tu propia pregunta — te respondemos directo por WhatsApp.',
+        ),
+      ),
+      React.createElement('div', { className: 'forum-grid' },
+        TRENDING.map((t) => React.createElement(ThreadCard, { key: t.q, ...t })),
+      ),
+      React.createElement(Link, { to: '/preguntas-frecuentes', className: 'link-underline', style: { display: 'inline-block', marginTop: 32 } }, 'Ver todas las preguntas frecuentes →'),
+      React.createElement('div', { className: 'card', style: { maxWidth: 560, marginTop: 56 } },
+        React.createElement('h3', { style: { fontSize: 24, fontWeight: 600, marginBottom: 10 } }, '¿Tienes una pregunta nueva?'),
+        React.createElement('p', { style: { color: '#6B7472', fontSize: 15, lineHeight: 1.6, marginBottom: 24 } },
+          'Escríbela aquí. No se publica en el sitio — llega directo a nuestro equipo por WhatsApp.',
+        ),
+        React.createElement(AskForm, null),
+      ),
+    ),
+  );
+}
