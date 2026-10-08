@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, navigate, currentPath } from '../router.js';
 import { IconMenu, IconGlobe } from '../icons.js';
-import { isTranslated, toggleLanguage } from '../translate.js';
+import { isTranslated, toggleLanguage, precargarGoogle } from '../translate.js';
 import { SITE } from '../config.js';
 import SocialLinks from './SocialLinks.js';
 
 function Brand() {
   return React.createElement(Link, { to: '/', className: 'brand' },
-    React.createElement('img', { src: '/assets/logo-dark.png', alt: SITE.name, className: 'brand-logo' }),
+    React.createElement('img', { src: '/assets/logo-dark.png', alt: SITE.name, translate: 'no', className: 'brand-logo' }),
   );
 }
 
@@ -26,6 +26,7 @@ function goToHomeSection(id) {
 
 export default function Header({ route }) {
   const [open, setOpen] = useState(false);
+  const [translated, setTranslated] = useState(isTranslated());
   const isServicios = route === '/servicios';
   const isBlog = route === '/blog' || route.startsWith('/blog/');
   const isFaq = route === '/preguntas-frecuentes';
@@ -37,9 +38,11 @@ export default function Header({ route }) {
     React.createElement(Link, { to: '/blog', className: isBlog ? 'active' : '' }, 'Blog'),
     React.createElement(Link, { to: '/preguntas-frecuentes', className: isFaq ? 'active' : '' }, 'Preguntas frecuentes'),
     React.createElement('button', {
-      type: 'button', className: 'lang-btn notranslate', translate: 'no', onClick: toggleLanguage,
-      'aria-label': isTranslated() ? 'Cambiar a español' : 'Translate this page to English',
-    }, React.createElement(IconGlobe, { size: 16, stroke: 'currentColor', strokeWidth: 1.6 }), isTranslated() ? 'Español' : 'English'),
+      type: 'button', className: 'lang-btn notranslate', translate: 'no',
+      onMouseEnter: precargarGoogle, onFocus: precargarGoogle,
+      onClick: () => { toggleLanguage(); setTranslated(isTranslated()); },
+      'aria-label': translated ? 'Cambiar a español' : 'Translate this page to English',
+    }, React.createElement(IconGlobe, { size: 16, stroke: 'currentColor', strokeWidth: 1.6 }), translated ? 'Español' : 'English'),
     React.createElement('a', { href: '/#cotizar', className: 'btn btn-primary', onClick: goToHomeSection('cotizar') }, 'Cotizar'),
   );
 

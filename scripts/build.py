@@ -26,7 +26,7 @@ DIST = os.path.join(ROOT, 'dist')
 # distritoaduanal.com y se marque como principal, todo se actualiza solo.
 SITE_URL = (os.environ.get('URL') or 'https://distritoaduanal.netlify.app').rstrip('/')
 
-SKIP = {'.git', '.claude', '.gitignore', 'dist', 'scripts', 'netlify.toml', 'README.md', '.DS_Store'}
+SKIP = {'tarjetas', '.git', '.claude', '.gitignore', 'dist', 'scripts', 'netlify.toml', 'README.md', '.DS_Store'}
 SUFFIX = ' | Distrito Aduanal'
 DEFAULT_IMAGE = '/assets/photos/banner-containers.jpg'
 
