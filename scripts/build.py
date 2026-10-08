@@ -123,7 +123,7 @@ def build_pages():
     faq = read_json('content/faq.json')
     images = post_images()
     names = {'/servicios': 'Servicios', '/preguntas-frecuentes': 'Preguntas frecuentes',
-             '/foro': 'Foro', '/blog': 'Blog', '/nosotros': 'Nosotros'}
+             '/descargables': 'Descargables', '/blog': 'Blog', '/nosotros': 'Nosotros'}
 
     out = []
     for path, meta in pages.items():
@@ -201,7 +201,7 @@ def write(rel, text):
 def main():
     if os.path.exists(DIST):
         shutil.rmtree(DIST)
-    shutil.copytree(ROOT, DIST, ignore=lambda d, names: [n for n in names if d == ROOT and n in SKIP or n == '.DS_Store'])
+    shutil.copytree(ROOT, DIST, ignore=lambda d, names: [n for n in names if d == ROOT and n in SKIP or n == '.DS_Store' or (d == ROOT and n.endswith('.zip'))])
 
     with open(os.path.join(ROOT, 'index.html'), encoding='utf-8') as f:
         template = f.read()

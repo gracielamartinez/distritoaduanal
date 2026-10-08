@@ -1,6 +1,6 @@
 # Distrito Aduanal — sitio web
 
-Sitio web de seis páginas (Inicio, Servicios, Foro, Preguntas frecuentes,
+Sitio web de seis páginas (Inicio, Servicios, Descargables, Preguntas frecuentes,
 Cobertura y Nosotros) para una agencia aduanal y comercializadora.
 Construido en React puro, sin paso de compilación: el navegador carga React
 directamente desde un CDN (esm.sh) como módulos ES, así que no se necesita
@@ -65,7 +65,7 @@ src/
     ├── Home.js               # Página de inicio
     ├── Servicios.js           # Catálogo completo de servicios por área, con íconos
     ├── PreguntasFrecuentes.js # FAQ del manual del cliente, en acordeón
-    ├── Foro.js                # Temas más comentados + formulario para preguntas nuevas
+    ├── Descargables.js        # Archivos para clientes (PDF, etc.), editables desde /admin
     └── Nosotros.js            # Historia real, misión, visión y propuesta de valor
 ```
 
@@ -98,10 +98,10 @@ frecuentes**, la pregunta "¿Por qué están elevados los impuestos?" no tiene
 respuesta todavía (venía así en el manual original).
 
 **3. El formulario de contacto** no tiene backend: arma un mensaje y abre
-WhatsApp con el chat listo para enviar (ver [`src/components/QuoteForm.js`](src/components/QuoteForm.js)
-y, en el Foro, [`src/pages/Foro.js`](src/pages/Foro.js)). El foro no publica
-preguntas en un tablero público — cada envío llega directo al equipo por
-WhatsApp, y el sitio lo deja claro en el texto del formulario.
+WhatsApp con el chat listo para enviar (ver [`src/components/QuoteForm.js`](src/components/QuoteForm.js)).
+
+**4. Descargables para clientes:** los archivos viven en `assets/descargables/` y
+se listan en `content/descargables.json` (también editable desde `/admin`).
 
 ## Publicarlo en internet (Netlify + edición desde /admin)
 

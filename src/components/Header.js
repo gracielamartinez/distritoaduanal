@@ -26,16 +26,15 @@ function goToHomeSection(id) {
 export default function Header({ route }) {
   const [open, setOpen] = useState(false);
   const isServicios = route === '/servicios';
-  const isForo = route === '/foro';
+  const isBlog = route === '/blog' || route.startsWith('/blog/');
   const isFaq = route === '/preguntas-frecuentes';
   const isNosotros = route === '/nosotros';
 
   const navLinks = React.createElement(React.Fragment, null,
-    React.createElement(Link, { to: '/servicios', className: isServicios ? 'active' : '' }, 'Servicios'),
-    React.createElement(Link, { to: '/foro', className: isForo ? 'active' : '' }, 'Foro'),
-    React.createElement(Link, { to: '/preguntas-frecuentes', className: isFaq ? 'active' : '' }, 'Preguntas frecuentes'),
-    React.createElement('a', { href: '/#recursos', onClick: goToHomeSection('recursos') }, 'Recursos'),
     React.createElement(Link, { to: '/nosotros', className: isNosotros ? 'active' : '' }, 'Nosotros'),
+    React.createElement(Link, { to: '/servicios', className: isServicios ? 'active' : '' }, 'Servicios'),
+    React.createElement(Link, { to: '/blog', className: isBlog ? 'active' : '' }, 'Blog'),
+    React.createElement(Link, { to: '/preguntas-frecuentes', className: isFaq ? 'active' : '' }, 'Preguntas frecuentes'),
     React.createElement('a', { href: '/#cotizar', className: 'btn btn-primary', onClick: goToHomeSection('cotizar') }, 'Cotizar'),
   );
 

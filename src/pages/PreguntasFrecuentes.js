@@ -2,7 +2,6 @@ import React from 'react';
 import { FAQ_CATEGORIES } from '../data/faq.js';
 import AccordionItem, { AccordionList } from '../components/Accordion.js';
 import { whatsappLink } from '../config.js';
-import { Link } from '../router.js';
 import { IconDocument, IconClock, IconFlagCheck, IconAdvice, IconInvoice, IconPackage, IconChat } from '../icons.js';
 
 const CATEGORY_ICONS = {
@@ -43,9 +42,7 @@ export default function PreguntasFrecuentes() {
         React.createElement('div', { className: 'eyebrow' }, 'Recursos'),
         React.createElement('h1', { className: 'page-title' }, 'Preguntas frecuentes'),
         React.createElement('p', { style: { color: '#4A5250', fontSize: 18, lineHeight: 1.65, maxWidth: 720 } },
-          'Respuestas directas a lo que más nos preguntan antes, durante y después de una operación. ¿No encuentras tu pregunta? Búscala en el ',
-          React.createElement(Link, { to: '/foro', className: 'link-underline' }, 'foro'),
-          ' o escríbenos.',
+          'Respuestas directas a lo que más nos preguntan antes, durante y después de una operación. ¿No encuentras tu pregunta? Escríbenos y te respondemos.',
         ),
       ),
     ),

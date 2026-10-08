@@ -6,7 +6,7 @@ import WhatsAppButton from './components/WhatsAppButton.js';
 import Home from './pages/Home.js';
 import Servicios from './pages/Servicios.js';
 import PreguntasFrecuentes from './pages/PreguntasFrecuentes.js';
-import Foro from './pages/Foro.js';
+import Descargables from './pages/Descargables.js';
 import Blog from './pages/Blog.js';
 import BlogPost from './pages/BlogPost.js';
 import Nosotros from './pages/Nosotros.js';
@@ -16,7 +16,7 @@ const PAGES = {
   '/': Home,
   '/servicios': Servicios,
   '/preguntas-frecuentes': PreguntasFrecuentes,
-  '/foro': Foro,
+  '/descargables': Descargables,
   '/blog': Blog,
   '/nosotros': Nosotros,
 };
