@@ -12,9 +12,4 @@ export const POST_ICONS = {
   'importar-sin-pagar-iva': IconPercent,
   'almacenajes-y-demoras': IconClock,
   'productos-que-no-se-pueden-importar': IconLock,
-  'importar-sin-padron-de-importadores': IconShield,
-  'como-se-calculan-los-impuestos-de-importacion': IconCalculator,
-  'que-es-una-comercializadora-aduanal': IconBuilding,
-  'importar-electronicos-suplementos-cosmeticos': IconPackage,
-  'persona-fisica-vs-persona-moral-para-importar': IconScale,
 };

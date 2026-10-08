@@ -6,9 +6,4 @@ export const POST_IMAGES = {
   'importar-sin-pagar-iva': '/assets/photos/blog-contrato.webp',
   'almacenajes-y-demoras': '/assets/photos/blog-almacen.webp',
   'productos-que-no-se-pueden-importar': '/assets/photos/blog-puerto.webp',
-  'importar-sin-padron-de-importadores': '/assets/photos/blog-puerto.webp',
-  'como-se-calculan-los-impuestos-de-importacion': '/assets/photos/blog-contrato.webp',
-  'que-es-una-comercializadora-aduanal': '/assets/photos/blog-barco.webp',
-  'importar-electronicos-suplementos-cosmeticos': '/assets/photos/blog-almacen.webp',
-  'persona-fisica-vs-persona-moral-para-importar': '/assets/photos/blog-contrato.webp',
 };
