@@ -1,0 +1,155 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Decap sube imágenes que se agreguen desde el editor a esta carpeta.
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# El editor no publica en un blog: guarda directo, sin editorial workflow.
+publish_mode: simple
+
+collections:
+  - name: "site"
+    label: "Datos generales"
+    files:
+      - name: "site"
+        label: "Contacto, redes y cifras"
+        file: "content/site.json"
+        fields:
+          - { label: "Nombre de la empresa", name: "name", widget: "string" }
+          - { label: "Frase (tagline)", name: "tagline", widget: "string" }
+          - { label: "Teléfono (como se muestra)", name: "phoneDisplay", widget: "string" }
+          - { label: "Teléfono (enlace tel:+52...)", name: "phoneHref", widget: "string" }
+          - { label: "WhatsApp (formato 521 + 10 dígitos, sin espacios)", name: "whatsappNumber", widget: "string", pattern: ['^\d{10,13}$', "Solo números, sin espacios ni signos"] }
+          - { label: "Correo de contacto", name: "email", widget: "string" }
+          - { label: "Razón social (para el Aviso de privacidad)", name: "legalName", widget: "string", required: false, hint: "Nombre legal de la empresa o de la persona física responsable de los datos" }
+          - { label: "Domicilio (para el Aviso de privacidad)", name: "address", widget: "string", required: false, hint: "Calle, número, colonia, CP, ciudad y estado" }
+          - { label: "Facebook (URL)", name: "facebookUrl", widget: "string" }
+          - { label: "Instagram (URL)", name: "instagramUrl", widget: "string" }
+          - label: "Cifras (Inicio)"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Clientes atendidos", name: "clients", widget: "string", required: false, hint: "Ej. 50+" }
+              - { label: "Operaciones realizadas", name: "operations", widget: "string", required: false, hint: "Ej. 500+" }
+              - { label: "Aduanas donde operan", name: "customsOffices", widget: "string", required: false, hint: "Ej. 6" }
+              - { label: "Sectores atendidos", name: "sectors", widget: "string", required: false, hint: "Ej. 12" }
+          - label: "Reseña destacada (Inicio)"
+            name: "review"
+            widget: "object"
+            fields:
+              - { label: "Número de reseñas en Google", name: "count", widget: "string", required: false, hint: "Ej. 45" }
+              - { label: "Cita de la reseña", name: "quote", widget: "text", required: false }
+              - { label: "Nombre del cliente · Empresa", name: "author", widget: "string", required: false }
+
+  - name: "services"
+    label: "Catálogo de servicios"
+    files:
+      - name: "services"
+        label: "Áreas y servicios"
+        file: "content/services.json"
+        fields:
+          - label: "Áreas"
+            name: "areas"
+            widget: "list"
+            summary: "{{fields.area}}"
+            fields:
+              - { label: "Nombre del área", name: "area", widget: "string" }
+              - label: "Ícono"
+                name: "icon"
+                widget: "select"
+                options: ["trade", "logistics", "customs", "package", "shield", "advice"]
+                hint: "trade=maletín, logistics=camión, customs=barco, package=paquete, shield=escudo, advice=documento"
+              - label: "Servicios de esta área"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descripción", name: "text", widget: "text" }
+
+  - name: "faq"
+    label: "Preguntas frecuentes"
+    files:
+      - name: "faq"
+        label: "Categorías y preguntas"
+        file: "content/faq.json"
+        fields:
+          - label: "Categorías"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.category}}"
+            fields:
+              - { label: "Nombre de la categoría", name: "category", widget: "string" }
+              - { label: "Texto introductorio (opcional)", name: "intro", widget: "text", required: false }
+              - label: "Preguntas"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.q}}"
+                fields:
+                  - { label: "Pregunta", name: "q", widget: "string" }
+                  - { label: "Respuesta (dejar vacío solo si usas la lista de abajo)", name: "a", widget: "text", required: false }
+                  - { label: "Respuesta en lista (solo para '¿Qué servicios ofrecen?')", name: "list", widget: "list", field: { label: "Elemento", name: "item", widget: "string" }, required: false }
+
+  - name: "foro"
+    label: "Foro (dentro del Blog)"
+    files:
+      - name: "foro"
+        label: "Temas más comentados"
+        file: "content/foro.json"
+        fields:
+          - label: "Temas destacados"
+            name: "trending"
+            widget: "list"
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "Categoría (etiqueta)", name: "tag", widget: "string" }
+              - { label: "Pregunta", name: "q", widget: "string" }
+              - { label: "Respuesta", name: "a", widget: "text" }
+
+  - name: "blog"
+    label: "Blog"
+    files:
+      - name: "blog"
+        label: "Artículos"
+        file: "content/blog.json"
+        fields:
+          - label: "Artículos"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "URL (slug, sin espacios ni acentos)", name: "slug", widget: "string", pattern: ['^[a-z0-9-]+$', "Solo minúsculas, números y guiones"] }
+              - { label: "Resumen (aparece en la lista de artículos)", name: "excerpt", widget: "text" }
+              - label: "Contenido"
+                name: "body"
+                widget: "list"
+                summary: "{{fields.text}}{{fields.title}}"
+                types:
+                  - label: "Párrafo"
+                    name: "p"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "p" }
+                      - { label: "Texto", name: "text", widget: "text" }
+                  - label: "Subtítulo"
+                    name: "h3"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "h3" }
+                      - { label: "Texto", name: "text", widget: "string" }
+                  - label: "Lista con viñetas"
+                    name: "ul"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "ul" }
+                      - { label: "Elementos", name: "items", widget: "list", field: { label: "Elemento", name: "item", widget: "string" } }
+                  - label: "Plantilla (correo, ej.)"
+                    name: "template"
+                    widget: "object"
+                    fields:
+                      - { label: "Tipo", name: "type", widget: "hidden", default: "template" }
+                      - { label: "Título de la plantilla", name: "title", widget: "string" }
+                      - { label: "Texto de la plantilla", name: "text", widget: "text" }

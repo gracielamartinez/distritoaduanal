@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- SEO:START — scripts/build.py reescribe este bloque para cada página
+       (título, descripción, URL canónica, vista previa y datos estructurados).
+       Estos valores son los de la página de inicio. -->
+  <title>Distrito Aduanal | Comercializadora aduanal y logística en México</title>
+  <meta name="description" content="Importa y exporta sin complicaciones. Comercializadora aduanal, despacho de importación y exportación, clasificación arancelaria, cálculo de impuestos y logística de comercio exterior en México." />
+  <link rel="canonical" href="https://distritoaduanal.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Distrito Aduanal | Comercializadora aduanal y logística en México" />
+  <meta property="og:description" content="Importa y exporta sin complicaciones. Comercializadora aduanal, despacho de importación y exportación, clasificación arancelaria, cálculo de impuestos y logística de comercio exterior en México." />
+  <meta property="og:url" content="https://distritoaduanal.netlify.app/" />
+  <meta property="og:image" content="https://distritoaduanal.netlify.app/assets/photos/banner-containers.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- SEO:END -->
+  <meta name="keywords" content="comercializadora aduanal, importar a México, exportar desde México, despacho aduanal, clasificación arancelaria, logística internacional, comercio exterior México, importación y exportación, padrón de importadores, aranceles México" />
+  <meta property="og:site_name" content="Distrito Aduanal" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://esm.sh" crossorigin />
+  <!-- El contenido editable se pide en paralelo desde el inicio, en vez de
+       esperar a que termine de cargar todo el JavaScript. -->
+  <link rel="preload" href="/content/site.json" as="fetch" crossorigin />
+  <link rel="preload" href="/content/services.json" as="fetch" crossorigin />
+  <link rel="preload" href="/content/faq.json" as="fetch" crossorigin />
+  <link rel="preload" href="/content/foro.json" as="fetch" crossorigin />
+  <link rel="preload" href="/content/blog.json" as="fetch" crossorigin />
+  <link rel="preload" href="/content/pages.json" as="fetch" crossorigin />
+  <script>
+    // Los enlaces de invitación/recuperación de Netlify Identity abren esta
+    // página con el token en la URL; sin esto se quedan aquí sin hacer nada.
+    // Los mandamos a /admin/, que sí carga el widget que los procesa.
+    if (window.location.hash && /invite_token|recovery_token|confirmation_token|email_change_token/.test(window.location.hash)) {
+      window.location.href = '/admin/' + window.location.hash;
+    }
+  </script>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+        "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime"
+      }
+    }
+  </script>
+  <!-- MODULEPRELOAD: scripts/build.py pone aquí los módulos de src/ (debe ir
+       después del importmap, o el navegador no sabe dónde está React). -->
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Formulario oculto solo para que Netlify Forms lo detecte en el HTML
+       estático (el sitio es una SPA, así que el bot de Netlify no ve el
+       formulario real que arma React). El envío real lo hace React vía
+       fetch a este mismo nombre de formulario. -->
+  <form name="cotizacion-hero" data-netlify="true" hidden>
+    <input type="text" name="nombre" />
+    <input type="text" name="apellido" />
+    <input type="email" name="email" />
+    <input type="text" name="telefono" />
+    <input type="text" name="producto" />
+    <input type="text" name="origen" />
+    <input type="text" name="aduanaDestino" />
+    <input type="text" name="valorMercancia" />
+    <textarea name="mensaje"></textarea>
+  </form>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
