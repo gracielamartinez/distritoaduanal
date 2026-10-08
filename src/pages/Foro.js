@@ -108,38 +108,27 @@ function AskForm() {
   );
 }
 
-export default function Foro() {
-  return React.createElement(React.Fragment, null,
-
-    React.createElement('section', { className: 'section', style: { paddingTop: 92, paddingBottom: 60 } },
-      React.createElement('div', { className: 'wrap' },
-        React.createElement('div', { className: 'eyebrow' }, 'Recursos'),
-        React.createElement('h1', { className: 'page-title' }, 'Foro'),
-        React.createElement('p', { style: { color: '#4A5250', fontSize: 18, lineHeight: 1.65, maxWidth: 720 } },
-          'Un espacio para resolver las dudas más comunes de nuestra comunidad de importadores. Explora los temas más comentados o manda tu propia pregunta — te respondemos directo por WhatsApp.',
+// Sección Foro: se muestra dentro de la página del Blog (/blog).
+export default function ForoSection() {
+  return React.createElement('section', { id: 'foro', className: 'px-60', style: { paddingTop: 24, paddingBottom: 92 } },
+    React.createElement('div', { className: 'wrap', style: { padding: 0 } },
+      React.createElement('div', { style: { borderTop: '1px solid #E3E6E5', paddingTop: 64 } },
+        React.createElement('div', { className: 'eyebrow' }, 'Foro'),
+        React.createElement('h2', { style: { fontSize: 34, fontWeight: 600, margin: '14px 0 14px' } }, 'Dudas de nuestra comunidad de importadores'),
+        React.createElement('p', { style: { color: '#4A5250', fontSize: 17, lineHeight: 1.65, maxWidth: 720, marginBottom: 36 } },
+          'Explora los temas más comentados o manda tu propia pregunta — te respondemos directo por WhatsApp.',
         ),
       ),
-    ),
-
-    React.createElement('section', { className: 'px-60', style: { paddingBottom: 30 } },
-      React.createElement('div', { className: 'wrap', style: { padding: 0 } },
-        React.createElement('h2', { style: { fontSize: 24, fontWeight: 600, marginBottom: 24 } }, 'Temas más comentados'),
-        React.createElement('div', { className: 'forum-grid' },
-          TRENDING.map((t) => React.createElement(ThreadCard, { key: t.q, ...t })),
-        ),
-        React.createElement(Link, { to: '/preguntas-frecuentes', className: 'link-underline', style: { display: 'inline-block', marginTop: 32 } }, 'Ver todas las preguntas frecuentes →'),
+      React.createElement('div', { className: 'forum-grid' },
+        TRENDING.map((t) => React.createElement(ThreadCard, { key: t.q, ...t })),
       ),
-    ),
-
-    React.createElement('section', { className: 'px-60', style: { paddingTop: 62, paddingBottom: 92 } },
-      React.createElement('div', { className: 'wrap', style: { padding: 0 } },
-        React.createElement('div', { className: 'card', style: { maxWidth: 560 } },
-          React.createElement('h2', { style: { fontSize: 24, fontWeight: 600, marginBottom: 10 } }, '¿Tienes una pregunta nueva?'),
-          React.createElement('p', { style: { color: '#6B7472', fontSize: 15, lineHeight: 1.6, marginBottom: 24 } },
-            'Escríbela aquí. No se publica en el sitio — llega directo a nuestro equipo por WhatsApp.',
-          ),
-          React.createElement(AskForm, null),
+      React.createElement(Link, { to: '/preguntas-frecuentes', className: 'link-underline', style: { display: 'inline-block', marginTop: 32 } }, 'Ver todas las preguntas frecuentes →'),
+      React.createElement('div', { className: 'card', style: { maxWidth: 560, marginTop: 56 } },
+        React.createElement('h3', { style: { fontSize: 24, fontWeight: 600, marginBottom: 10 } }, '¿Tienes una pregunta nueva?'),
+        React.createElement('p', { style: { color: '#6B7472', fontSize: 15, lineHeight: 1.6, marginBottom: 24 } },
+          'Escríbela aquí. No se publica en el sitio — llega directo a nuestro equipo por WhatsApp.',
         ),
+        React.createElement(AskForm, null),
       ),
     ),
   );

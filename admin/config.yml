@@ -23,6 +23,8 @@ collections:
           - { label: "Teléfono (enlace tel:+52...)", name: "phoneHref", widget: "string" }
           - { label: "WhatsApp (formato 521 + 10 dígitos, sin espacios)", name: "whatsappNumber", widget: "string", pattern: ['^\d{10,13}$', "Solo números, sin espacios ni signos"] }
           - { label: "Correo de contacto", name: "email", widget: "string" }
+          - { label: "Razón social (para el Aviso de privacidad)", name: "legalName", widget: "string", required: false, hint: "Nombre legal de la empresa o de la persona física responsable de los datos" }
+          - { label: "Domicilio (para el Aviso de privacidad)", name: "address", widget: "string", required: false, hint: "Calle, número, colonia, CP, ciudad y estado" }
           - { label: "Facebook (URL)", name: "facebookUrl", widget: "string" }
           - { label: "Instagram (URL)", name: "instagramUrl", widget: "string" }
           - label: "Cifras (Inicio)"
@@ -90,23 +92,21 @@ collections:
                   - { label: "Respuesta (dejar vacío solo si usas la lista de abajo)", name: "a", widget: "text", required: false }
                   - { label: "Respuesta en lista (solo para '¿Qué servicios ofrecen?')", name: "list", widget: "list", field: { label: "Elemento", name: "item", widget: "string" }, required: false }
 
-  - name: "descargables"
-    label: "Descargables para clientes"
+  - name: "foro"
+    label: "Foro (dentro del Blog)"
     files:
-      - name: "descargables"
-        label: "Archivos para descargar"
-        file: "content/descargables.json"
+      - name: "foro"
+        label: "Temas más comentados"
+        file: "content/foro.json"
         fields:
-          - label: "Archivos"
-            name: "items"
+          - label: "Temas destacados"
+            name: "trending"
             widget: "list"
-            summary: "{{fields.title}}"
+            summary: "{{fields.q}}"
             fields:
-              - { label: "Título", name: "title", widget: "string" }
-              - { label: "Descripción", name: "description", widget: "text" }
-              - { label: "Formato (PDF, Excel, Word…)", name: "format", widget: "string", default: "PDF" }
-              - { label: "Archivo", name: "file", widget: "file", media_folder: "/assets/descargables", public_folder: "/assets/descargables" }
-              - { label: "Imagen de vista previa (opcional)", name: "image", widget: "image", required: false, media_folder: "/assets/descargables", public_folder: "/assets/descargables" }
+              - { label: "Categoría (etiqueta)", name: "tag", widget: "string" }
+              - { label: "Pregunta", name: "q", widget: "string" }
+              - { label: "Respuesta", name: "a", widget: "text" }
 
   - name: "blog"
     label: "Blog"

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { isTranslated } from './translate.js';
 
 // Enrutador minimalista (sin dependencias) con URLs reales: /blog/mi-articulo/
 // en lugar de #/blog/mi-articulo. Google ignora todo lo que va después de "#",
@@ -37,6 +38,7 @@ export function useRoute() {
 }
 
 export function navigate(path) {
+  if (isTranslated()) { window.location.assign(toHref(path)); return; }
   window.history.pushState({}, '', toHref(path));
   window.dispatchEvent(new Event(ROUTE_EVENT));
   window.scrollTo({ top: 0, behavior: 'instant' in window.scrollTo ? 'instant' : 'auto' });

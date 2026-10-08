@@ -5,6 +5,7 @@ import { whatsappLink } from '../config.js';
 import { POST_ICONS } from '../data/blogIcons.js';
 import { POST_IMAGES } from '../data/blogImages.js';
 import { IconDocument } from '../icons.js';
+import ForoSection from './Foro.js';
 
 function PostCard({ slug, title, excerpt }) {
   const PostIcon = POST_ICONS[slug] || IconDocument;
@@ -41,6 +42,8 @@ export default function Blog() {
         ),
       ),
     ),
+
+    React.createElement(ForoSection, null),
 
     React.createElement('section', { className: 'final-cta' },
       React.createElement('div', { className: 'wrap' },

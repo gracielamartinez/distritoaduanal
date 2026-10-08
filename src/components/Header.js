@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, navigate, currentPath } from '../router.js';
-import { IconMenu } from '../icons.js';
+import { IconMenu, IconGlobe } from '../icons.js';
+import { isTranslated, toggleLanguage } from '../translate.js';
 import { SITE } from '../config.js';
 import SocialLinks from './SocialLinks.js';
 
@@ -35,6 +36,10 @@ export default function Header({ route }) {
     React.createElement(Link, { to: '/servicios', className: isServicios ? 'active' : '' }, 'Servicios'),
     React.createElement(Link, { to: '/blog', className: isBlog ? 'active' : '' }, 'Blog'),
     React.createElement(Link, { to: '/preguntas-frecuentes', className: isFaq ? 'active' : '' }, 'Preguntas frecuentes'),
+    React.createElement('button', {
+      type: 'button', className: 'lang-btn notranslate', translate: 'no', onClick: toggleLanguage,
+      'aria-label': isTranslated() ? 'Cambiar a español' : 'Translate this page to English',
+    }, React.createElement(IconGlobe, { size: 16, stroke: 'currentColor', strokeWidth: 1.6 }), isTranslated() ? 'Español' : 'English'),
     React.createElement('a', { href: '/#cotizar', className: 'btn btn-primary', onClick: goToHomeSection('cotizar') }, 'Cotizar'),
   );
 

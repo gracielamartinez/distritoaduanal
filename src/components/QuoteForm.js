@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from '../router.js';
 import { whatsappLink } from '../config.js';
 
 // Formulario funcional sin backend: arma un mensaje de WhatsApp con los datos
@@ -40,5 +41,6 @@ export default function QuoteForm({ withMessageField = true, submitLabel = 'Envi
       placeholder: '¿Qué quieres importar?', value: values.mensaje, onChange: update('mensaje'),
     }),
     React.createElement('button', { type: 'submit', className: 'form-submit' }, submitLabel),
+    React.createElement('p', { className: 'form-note' }, 'Al enviar este formulario aceptas nuestro ', React.createElement(Link, { to: '/aviso-de-privacidad', className: 'link-underline' }, 'Aviso de privacidad'), '.'),
   );
 }

@@ -9,6 +9,8 @@ export const SITE = {
   phoneHref: 'tel:+529996047334',
   whatsappNumber: '5219996047334', // formato internacional para wa.me (México requiere el "1" extra)
   email: 'soluciones@distritoaduanal.com',
+  legalName: '',
+  address: '',
   facebookUrl: 'https://www.facebook.com/share/1MLqFhxfGd/?mibextid=wwXIfr',
   instagramUrl: 'https://www.instagram.com/distritoaduanal?stkn=MmN0dGd5cnNmZHFs',
   stats: {

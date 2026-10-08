@@ -96,7 +96,7 @@ export default function Home() {
         React.createElement('div', { className: 'hero-copy' },
           React.createElement('div', { className: 'eyebrow' }, 'Comercializadora aduanal y logística de comercio exterior'),
           React.createElement('h1', null, 'Que las fronteras no detengan tu negocio'),
-          React.createElement('p', null, 'Te acompañamos en cada paso de tu importación o exportación en México: despacho aduanal, clasificación arancelaria y logística, desde el primer correo a tu proveedor hasta que la mercancía llega a tu bodega.'),
+          React.createElement('p', null, 'Te acompañamos en cada paso de tu importación o exportación en México: despacho aduanal, clasificación arancelaria y logística, desde el primer correo a tu proveedor hasta que la mercancía llegue a su destino.'),
           React.createElement('div', { className: 'hero-actions' },
             React.createElement(Link, { to: '/servicios', className: 'btn btn-outline-light' }, 'Ver servicios'),
           ),
@@ -166,7 +166,6 @@ export default function Home() {
     React.createElement('section', { className: 'gr-outer', id: 'recursos' },
       React.createElement('div', { className: 'wrap', style: { padding: 0, display: 'flex', gap: 28, flexWrap: 'wrap' } },
         React.createElement(Link, { to: '/preguntas-frecuentes', className: 'link-underline' }, 'Preguntas frecuentes →'),
-        React.createElement(Link, { to: '/descargables', className: 'link-underline' }, 'Descargables →'),
         React.createElement(Link, { to: '/blog', className: 'link-underline' }, 'Blog →'),
       ),
     ),
@@ -337,6 +336,7 @@ function HeroForm() {
           ),
           React.createElement('button', { type: 'submit', className: 'form-submit', disabled: status === 'sending' },
             status === 'sending' ? 'Enviando…' : 'Solicitar información'),
+          React.createElement('p', { className: 'form-note' }, 'Al enviar este formulario aceptas nuestro ', React.createElement(Link, { to: '/aviso-de-privacidad', className: 'link-underline' }, 'Aviso de privacidad'), '.'),
         ),
   );
 }

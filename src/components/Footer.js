@@ -28,7 +28,6 @@ export default function Footer() {
           React.createElement('div', { className: 'footer-col' },
             React.createElement('span', null, 'La Guía Maestra'),
             React.createElement(Link, { to: '/preguntas-frecuentes' }, 'Preguntas frecuentes'),
-            React.createElement(Link, { to: '/descargables' }, 'Descargables'),
             React.createElement(Link, { to: '/blog' }, 'Blog'),
           ),
         ),
@@ -42,7 +41,7 @@ export default function Footer() {
       ),
       React.createElement('div', { className: 'footer-bottom' },
         React.createElement('span', null, `© ${new Date().getFullYear()} ${SITE.name}. Todos los derechos reservados.`),
-        React.createElement('span', null, 'Aviso de privacidad'),
+        React.createElement(Link, { to: '/aviso-de-privacidad' }, 'Aviso de privacidad'),
       ),
     ),
   );
